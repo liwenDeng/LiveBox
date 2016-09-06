@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MSModelAdapterProtocol.h"
+#import "MSRoomCellModel.h"
 
-@interface DYRoomModel : NSObject
+@interface DYRoomModel : NSObject <MSModelAdapterProtocol>
 
 @property (nonatomic, copy) NSString *room_id;
 @property (nonatomic, copy) NSString *room_name;
@@ -30,5 +32,20 @@
 @property (nonatomic, copy) NSString *cate_id;
 @property (nonatomic, copy) NSString *specific_status;
 @property (nonatomic, copy) NSString *vod_quality;
+
+- (MSRoomCellModel *)convertToUniteModel;
+
+@end
+
+/**
+ *  斗鱼热门分类列表
+ */
+@interface DYRoomCateList : NSObject
+
+@property (nonatomic, strong) NSArray *room_list;
+@property (nonatomic, copy) NSString *tag_name;
+@property (nonatomic, assign) NSInteger tag_id;
+@property (nonatomic, copy) NSString *icon_url;
+@property (nonatomic, copy) NSString *push_vertical_screen;
 
 @end

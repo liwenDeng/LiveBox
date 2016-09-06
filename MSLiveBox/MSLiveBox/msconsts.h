@@ -11,6 +11,16 @@
  */
 #ifndef msconsts_h
 #define msconsts_h
+#import <UIKit/UIKit.h>
+
+/**
+ 平台类型
+ */
+typedef enum : NSUInteger {
+    MSLivetypeDouYu,
+    MSLivetypePanda,
+    MSLivetypeQuanMin,
+} MSLivetype;
 
 #pragma mark - SCREEN
 // 屏幕SIZE
@@ -43,7 +53,7 @@
 #pragma mark - DEBUG
 
 
-#ifndef DEBUG
+#ifdef DEBUG
 #define MSLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
 #else
 #define MSLog(...)

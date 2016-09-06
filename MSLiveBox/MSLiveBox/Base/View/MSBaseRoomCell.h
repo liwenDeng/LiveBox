@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSRoomCellModel.h"
 
 #define kItemWidth (kSCREEN_WIDTH - 30 ) / 2.0
 #define kItemHeight (kItemWidth * 7.0 / 9.0)
@@ -19,7 +20,7 @@
 
 - (void)setupSubViews;
 - (void)updateSubViewsWithFrame:(CGRect)frame;
-- (void)fillWithRoomModel:(id)roomModel atIndexPath:(NSIndexPath *)indexPath;
+- (void)fillWithRoomModel:(id<MSModelAdapterProtocol>)roomModel atIndexPath:(NSIndexPath *)indexPath;
 
 + (CGSize)cellSize;
 

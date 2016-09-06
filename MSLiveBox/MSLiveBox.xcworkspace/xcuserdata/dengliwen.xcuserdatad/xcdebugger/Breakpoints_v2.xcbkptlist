@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MSLiveBox/msconsts.h"
-            timestampString = "494758467.021353"
+            timestampString = "494825195.412165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47">
+            startingLineNumber = "59"
+            endingLineNumber = "59">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -34,11 +34,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MSLiveBox/msconsts.h"
-            timestampString = "494758470.4546"
+            timestampString = "494825196.210099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49">
+            startingLineNumber = "57"
+            endingLineNumber = "57">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -8,6 +8,7 @@
 
 #import "MSHomeViewController.h"
 #import "ZJScrollPageView.h"
+#import "MSDYHomeVC.h"
 
 @interface MSHomeViewController ()
 
@@ -53,9 +54,8 @@
 
 - (NSArray *)setupChildVcAndTitle {
     
-    UIViewController *vc1 = [UIViewController new];
-    vc1.view.backgroundColor = [UIColor redColor];
-    vc1.title = @"新闻头条";
+    MSDYHomeVC *vc1 = [[MSDYHomeVC alloc]init];
+    vc1.title = @"斗鱼TV";
     
     UIViewController *vc2 = [UIViewController new];
     vc2.view.backgroundColor = [UIColor greenColor];

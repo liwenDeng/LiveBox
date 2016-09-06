@@ -9,6 +9,10 @@
 #import "DYApiTest.h"
 #import "MSNetworking+DYAPI.h"
 #import "msconsts.h"
+#import "DYBannerModel.h"
+#import "DYRoomModel.h"
+#import <MJExtension.h>
+#import "MSBaseBannerModel.h"
 
 @interface DYApiTest ()
 
@@ -46,7 +50,12 @@
 - (void)testBannerList {
     [self waitForGroup:^(dispatch_group_t group) {
         [MSNetworking getDouyuSlideBanners:^(NSDictionary *object) {
-            NSLog(@"Res:%@",object);
+            MSLog(@"Res:%@",object);
+            NSArray *bannerList = [DYBannerModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+            XCTAssertTrue([bannerList[0] isMemberOfClass:[DYBannerModel class]],@"fail");
+            DYBannerModel *DYmodel = bannerList[0];
+            MSBaseBannerModel *model = [DYmodel convertToUniteModel];
+            XCTAssertNotNil(model,@"fail");
             dispatch_group_leave(group);
         } failure:^(NSError *error) {
             NSLog(@"Fail:%@",error);
@@ -55,6 +64,55 @@
     }];
 }
 
+/**
+ *  首页数据
+ */
+- (void)testHomeRequest {
+    [self waitForGroup:^(dispatch_group_t group) {
+       [MSNetworking getDouyuBigDataInfos:^(NSDictionary *object) {
+           MSLog(@"热门推荐Res:%@",object);
+           NSArray *roomList = [DYRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+           XCTAssert(roomList.count > 0,@"没有数据");
+           DYRoomModel *dyModel = roomList[0];
+           MSRoomCellModel *model = [dyModel convertToUniteModel];
+           XCTAssertNotNil(model,@"fail");
+           dispatch_group_leave(group);
+       } failure:^(NSError *error) {
+           
+           dispatch_group_leave(group);
+       }];
+    }];
+    
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getDouyuFaceInfos:^(NSDictionary *object) {
+            MSLog(@"颜值Res:%@",object);
+            NSArray *roomList = [DYRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+            XCTAssert(roomList.count > 0,@"没有数据");
+            DYRoomModel *dyModel = roomList[0];
+            MSRoomCellModel *model = [dyModel convertToUniteModel];
+            XCTAssertNotNil(model,@"fail");
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }];
+    
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getDouyuHotCateListInfos:^(NSDictionary *object) {
+            MSLog(@"热门分类Res:%@",object);
+            NSArray *cateList = [DYRoomCateList mj_objectArrayWithKeyValuesArray:object[@"data"]];
+            XCTAssert(cateList.count > 0, @"没有分类数据");
+            DYRoomCateList *cate = cateList[0];
+            DYRoomModel *model = cate.room_list[0];
+            MSLog(@"tag:%@",cate.tag_name);
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+           
+            dispatch_group_leave(group);
+        }];
+    }];
+}
 
 - (dispatch_group_t)testGroup {
     if (!_testGroup) {

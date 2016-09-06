@@ -18,6 +18,8 @@
 
 @interface MSBaseBannerView : UICollectionReusableView
 
+@property (nonatomic, weak) id<MSBaseBannerViewDelegate> delegate;
+
 - (void)fillWithBannerModels:(NSArray *)bannerModels;
 
 + (CGSize)sectionHeaderViewSize;

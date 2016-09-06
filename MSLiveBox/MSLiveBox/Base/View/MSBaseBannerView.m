@@ -66,7 +66,7 @@ static const CGFloat kPageControlHeight = 30;
 - (void)setupSubviews {
     _circleView = [MSCircleView circleViewWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kBannerHeight) urlImageArray:nil];
     _circleView.backgroundColor = [UIColor whiteColor];
-//    _circleView.cellClass = [DYBannerCell class];
+    _circleView.cellClass = [MSBannerCell class];
     
     [self addSubview:_circleView];
     [_circleView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -91,8 +91,9 @@ static const CGFloat kPageControlHeight = 30;
 
 - (void)fillWithBannerModels:(NSArray *)bannerModels {
     NSMutableArray *urls = [NSMutableArray array];
-    for (MSBaseBannerModel *bannerModel in bannerModels) {
-//        [urls addObject:bannerModel.pic_url];
+    for (id<MSModelAdapterProtocol> bannerModel in bannerModels) {
+        MSBaseBannerModel *model = [bannerModel convertToUniteModel];
+        [urls addObject:model.bigPic];
     }
     self.circleView.imageArray = urls;
     
@@ -104,15 +105,15 @@ static const CGFloat kPageControlHeight = 30;
     
     [self.circleView configCustomCell:^(MSCircleBaseCell *customCell, NSInteger index) {
         MSBannerCell *cell = (MSBannerCell *)customCell;
-//        DYBannerModel *bannerModel = bannerModels[index];
-//        cell.titleLabel.text = bannerModel.title;
+        MSBaseBannerModel *bannerModel = bannerModels[index];
+        cell.titleLabel.text = bannerModel.title;
     }];
     
     [self.circleView addTapBlock:^(NSInteger index) {
-//        if ([weakSelf.delegate respondsToSelector:@selector()]) {
-//            MSBaseBannerModel *bannerModel = bannerModels[index];
-//            [weakSelf.delegate dyHomeHeaderBanner:weakSelf clickedAtIndex:index roomId:bannerModel.roomId];
-//        }
+        if ([weakSelf.delegate respondsToSelector:@selector(banner:clickedAtIndex:roomId:)]) {
+            MSBaseBannerModel *bannerModel = bannerModels[index];
+            [weakSelf.delegate banner:weakSelf clickedAtIndex:index roomId:bannerModel.roomId];
+        }
     }];
 }
 

@@ -9,6 +9,7 @@
 #import "MSHomeViewController.h"
 #import "ZJScrollPageView.h"
 #import "MSDYHomeVC.h"
+#import "MSQMHomeVC.h"
 
 @interface MSHomeViewController ()
 
@@ -57,9 +58,8 @@
     MSDYHomeVC *vc1 = [[MSDYHomeVC alloc]init];
     vc1.title = @"斗鱼TV";
     
-    UIViewController *vc2 = [UIViewController new];
-    vc2.view.backgroundColor = [UIColor greenColor];
-    vc2.title = @"国际要闻";
+    MSQMHomeVC *vc2 = [MSQMHomeVC new];
+    vc2.title = @"全民TV";
     
     NSArray *childVcs = [NSArray arrayWithObjects:vc1, vc2,nil];
     return childVcs;

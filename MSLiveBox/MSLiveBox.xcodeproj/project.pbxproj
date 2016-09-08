@@ -42,6 +42,8 @@
 		BC6A371F1D7EC2EA009639C9 /* MSAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A371E1D7EC2EA009639C9 /* MSAPITest.m */; };
 		BC6A37221D7EC33F009639C9 /* QMApiTes.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A37211D7EC33F009639C9 /* QMApiTes.m */; };
 		BC6A37281D7EC7FA009639C9 /* QMCateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A37271D7EC7FA009639C9 /* QMCateModel.m */; };
+		BC6B65991D7FA9A700714941 /* MSQMHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B65981D7FA9A700714941 /* MSQMHomeVC.m */; };
+		BC6B659F1D7FE8E200714941 /* MSQMBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B659E1D7FE8E200714941 /* MSQMBannerView.m */; };
 		BC89F0A31D7D47F700F0A2B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F0A21D7D47F700F0A2B5 /* main.m */; };
 		BC89F0A61D7D47F700F0A2B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F0A51D7D47F700F0A2B5 /* AppDelegate.m */; };
 		BC89F0AC1D7D47F700F0A2B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC89F0AA1D7D47F700F0A2B5 /* Main.storyboard */; };
@@ -169,6 +171,10 @@
 		BC6A37211D7EC33F009639C9 /* QMApiTes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMApiTes.m; sourceTree = "<group>"; };
 		BC6A37261D7EC7FA009639C9 /* QMCateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMCateModel.h; sourceTree = "<group>"; };
 		BC6A37271D7EC7FA009639C9 /* QMCateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMCateModel.m; sourceTree = "<group>"; };
+		BC6B65971D7FA9A700714941 /* MSQMHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSQMHomeVC.h; sourceTree = "<group>"; };
+		BC6B65981D7FA9A700714941 /* MSQMHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSQMHomeVC.m; sourceTree = "<group>"; };
+		BC6B659D1D7FE8E200714941 /* MSQMBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSQMBannerView.h; sourceTree = "<group>"; };
+		BC6B659E1D7FE8E200714941 /* MSQMBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSQMBannerView.m; sourceTree = "<group>"; };
 		BC89F09E1D7D47F700F0A2B5 /* MSLiveBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSLiveBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC89F0A21D7D47F700F0A2B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC89F0A41D7D47F700F0A2B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -451,6 +457,15 @@
 			path = "NSDate+MSExtension";
 			sourceTree = "<group>";
 		};
+		BC6B65961D7FA98100714941 /* QM */ = {
+			isa = PBXGroup;
+			children = (
+				BC6B65971D7FA9A700714941 /* MSQMHomeVC.h */,
+				BC6B65981D7FA9A700714941 /* MSQMHomeVC.m */,
+			);
+			name = QM;
+			sourceTree = "<group>";
+		};
 		BC89F0951D7D47F700F0A2B5 = {
 			isa = PBXGroup;
 			children = (
@@ -633,6 +648,8 @@
 			children = (
 				BC6A36E61D7EAC36009639C9 /* DYFaceRoomCell.h */,
 				BC6A36E71D7EAC36009639C9 /* DYFaceRoomCell.m */,
+				BC6B659D1D7FE8E200714941 /* MSQMBannerView.h */,
+				BC6B659E1D7FE8E200714941 /* MSQMBannerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -643,6 +660,7 @@
 				BC89F12D1D7D53A900F0A2B5 /* MSHomeViewController.h */,
 				BC89F12E1D7D53A900F0A2B5 /* MSHomeViewController.m */,
 				BC89F1621D7D62F100F0A2B5 /* Douyu */,
+				BC6B65961D7FA98100714941 /* QM */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1152,8 +1170,10 @@
 				BC89F1231D7D51F700F0A2B5 /* MSTabBarControllerConfig.m in Sources */,
 				BC89F1121D7D517000F0A2B5 /* CYLTabBar.m in Sources */,
 				BC6A37191D7EBEF2009639C9 /* QMBannerModel.m in Sources */,
+				BC6B65991D7FA9A700714941 /* MSQMHomeVC.m in Sources */,
 				BC6A36DA1D7EA80E009639C9 /* MSBaseBannerModel.m in Sources */,
 				BC89F12C1D7D52EC00F0A2B5 /* MSBaseViewController.m in Sources */,
+				BC6B659F1D7FE8E200714941 /* MSQMBannerView.m in Sources */,
 				BC6A36C01D7E7377009639C9 /* UIImage+RoundedCorner.m in Sources */,
 				BC89F1141D7D517000F0A2B5 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				BC89F1151D7D517000F0A2B5 /* FPSLabel.m in Sources */,

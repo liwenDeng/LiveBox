@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSCircleView.h"
+#import "MSBaseBannerModel.h"
 
 @class MSBaseBannerView;
 
@@ -18,7 +20,12 @@
 
 @interface MSBaseBannerView : UICollectionReusableView
 
+@property (nonatomic, strong) MSCircleView *circleView;
+@property (nonatomic, strong) UIPageControl *pageControl;
+
 @property (nonatomic, weak) id<MSBaseBannerViewDelegate> delegate;
+
+- (void)setupSubviews;
 
 - (void)fillWithBannerModels:(NSArray *)bannerModels;
 

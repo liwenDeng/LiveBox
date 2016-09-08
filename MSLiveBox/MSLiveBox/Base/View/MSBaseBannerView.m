@@ -7,8 +7,6 @@
 //
 
 #import "MSBaseBannerView.h"
-#import "MSCircleView.h"
-#import "MSBaseBannerModel.h"
 
 static const CGFloat kBannerHeight = 140;
 static const CGFloat kPageControlHeight = 30;
@@ -49,9 +47,6 @@ static const CGFloat kPageControlHeight = 30;
 #pragma mark - MSBaseBannerView
 @interface MSBaseBannerView ()
 
-@property (nonatomic, strong) MSCircleView *circleView;
-@property (nonatomic, strong) UIPageControl *pageControl;
-
 @end
 
 @implementation MSBaseBannerView
@@ -81,7 +76,7 @@ static const CGFloat kPageControlHeight = 30;
     [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.mas_right).offset(-10);
         make.height.mas_equalTo(kPageControlHeight);
-        make.bottom.equalTo(self);
+        make.bottom.equalTo(self.circleView);
     }];
     _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     _pageControl.currentPageIndicatorTintColor = [UIColor orangeColor];

@@ -10,6 +10,9 @@
 #import "MSCircleView.h"
 #import "MSBaseBannerModel.h"
 
+static const CGFloat kBannerHeight = 140;
+static const CGFloat kPageControlHeight = 30;
+
 @class MSBaseBannerView;
 
 @protocol MSBaseBannerViewDelegate <NSObject>

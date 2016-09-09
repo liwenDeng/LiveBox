@@ -12,7 +12,7 @@
 @implementation QMBannerModel
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
-    return @{@"id": @"room_id"};
+    return @{@"room_id": @"id"};
 }
 
 - (id)convertToUniteModel {

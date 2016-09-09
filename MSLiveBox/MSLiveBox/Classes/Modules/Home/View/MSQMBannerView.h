@@ -8,6 +8,18 @@
 
 #import "MSBaseBannerView.h"
 
+@class MSQMBannerView;
+
+@protocol MSQMBannerViewDelegate <NSObject>
+
+- (void)bannerView:(MSQMBannerView *)bannerView clickedCateCircleAtIndex:(NSInteger)index cateId:(NSString *)cateId;
+
+@end
+
 @interface MSQMBannerView : MSBaseBannerView
+
+@property (nonatomic, weak)id<MSQMBannerViewDelegate> cateDelegate;
+
+- (void)fillWithBannerModels:(NSArray *)bannerModels cateModels:(NSArray *)cateModels;
 
 @end

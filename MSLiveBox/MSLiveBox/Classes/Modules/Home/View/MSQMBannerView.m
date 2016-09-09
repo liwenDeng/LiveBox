@@ -7,6 +7,7 @@
 //
 
 #import "MSQMBannerView.h"
+#import "MSBaseCateModel.h"
 
 static const CGFloat kCircleRadius = 45.0f;
 static const CGFloat kCircleCellHeight = 90.0f;
@@ -53,14 +54,44 @@ static const CGFloat kCircleCellHeight = 90.0f;
 - (void)setupSubviews {
     [super setupSubviews];
     
-    _cateCircleView = [MSCircleView circleViewWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kCircleCellHeight) urlImageArray:nil];
+    _cateCircleView.frame = CGRectMake(0, 0, kBannerHeight, kSCREEN_WIDTH);
+    
+    _cateCircleView = [MSCircleView circleViewWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kCircleCellHeight) urlImageArray:nil perPageCount:5];
     _cateCircleView.backgroundColor = [UIColor whiteColor];
     _cateCircleView.cellClass = [MSQMCateCell class];
     
     [self addSubview:_cateCircleView];
-    [_cateCircleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
+    _cateCircleView.frame = CGRectMake(0, kBannerHeight, kSCREEN_WIDTH, kCircleCellHeight);
+    
 }
 
+- (void)fillWithBannerModels:(NSArray *)bannerModels cateModels:(NSArray *)cateModels {
+    [super fillWithBannerModels:bannerModels];
+    
+    NSMutableArray *urls = [NSMutableArray array];
+    for (id<MSModelAdapterProtocol> cateModel in cateModels) {
+         MSBaseCateModel *model = [cateModel convertToUniteModel];
+        [urls addObject:model.thumb];
+    }
+    self.cateCircleView.imageArray = urls;
+    
+    [self.cateCircleView configCustomCell:^(MSCircleBaseCell *customCell, NSInteger index) {
+        MSQMCateCell *cell = (MSQMCateCell *)customCell;
+        MSBaseCateModel *cateModel = cateModels[index];
+        cell.cateLabel.text = cateModel.title;
+    }];
+    
+    __weak typeof (self)weakSelf = self;
+    [self.cateCircleView addTapBlock:^(NSInteger index) {
+        if ([weakSelf.cateDelegate respondsToSelector:@selector(banner:clickedAtIndex:roomId:)]) {
+            MSBaseCateModel *cateModel = cateModels[index];
+            [self.cateDelegate bannerView:self clickedCateCircleAtIndex:index cateId:cateModel.cateId];
+        }
+    }];
+
+}
+
++ (CGSize)sectionHeaderViewSize {
+    return CGSizeMake(kSCREEN_WIDTH, kBannerHeight + kCircleCellHeight);
+}
 @end

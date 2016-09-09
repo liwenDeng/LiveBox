@@ -8,9 +8,6 @@
 
 #import "MSBaseBannerView.h"
 
-static const CGFloat kBannerHeight = 140;
-static const CGFloat kPageControlHeight = 30;
-
 #pragma mark - MSBannerCell
 
 @interface MSBannerCell : MSCircleBaseCell
@@ -64,9 +61,6 @@ static const CGFloat kPageControlHeight = 30;
     _circleView.cellClass = [MSBannerCell class];
     
     [self addSubview:_circleView];
-    [_circleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
     _circleView.autoScroll = YES;
     
     _pageControl = [[UIPageControl alloc]init];
@@ -78,10 +72,11 @@ static const CGFloat kPageControlHeight = 30;
         make.height.mas_equalTo(kPageControlHeight);
         make.bottom.equalTo(self.circleView);
     }];
+
     _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     _pageControl.currentPageIndicatorTintColor = [UIColor orangeColor];
     _pageControl.backgroundColor = [UIColor clearColor];
-    _pageControl.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _pageControl.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 }
 
 - (void)fillWithBannerModels:(NSArray *)bannerModels {

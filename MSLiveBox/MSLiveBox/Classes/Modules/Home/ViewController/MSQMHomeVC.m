@@ -10,18 +10,20 @@
 #import "QMBannerModel.h"
 #import "QMRoomModel.h"
 #import "QMCateModel.h"
+#import "QMRemenCateModel.h"
 #import "MSNetworking+QMAPI.h"
 #import "MSBaseRoomCell.h"
-#import "MSBaseBannerView.h"
+#import "MSQMBannerView.h"
 #import "MSBaseSectionHeaderView.h"
 
-static NSString *const kBannerCellID = @"kBannerCell";
+static NSString *const kBannerCellID = @"kQMBannerCell";
 static NSString *const kNormalRoomCellID = @"kNormalRoomCell";
 static NSString *const kSectionHeaderID = @"kSectionHeaderId";
 
 @interface MSQMHomeVC ()
 
 @property (nonatomic, strong) NSArray *bannerList;
+@property (nonatomic, strong) NSArray *remenCates;
 @property (nonatomic, strong) NSArray *sectionHeaders;
 @property (nonatomic, strong) NSMutableArray *sectionDatas;
 
@@ -38,7 +40,7 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
 }
 
 - (void)registCellClass {
-    [self.collectionView registerClass:[MSBaseBannerView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kBannerCellID];
+    [self.collectionView registerClass:[MSQMBannerView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kBannerCellID];
     [self.collectionView registerClass:[MSBaseSectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSectionHeaderID];
     
     [self.collectionView registerClass:[MSBaseRoomCell class] forCellWithReuseIdentifier:kNormalRoomCellID];
@@ -78,6 +80,11 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
             NSArray *roomList = [QMLinkModel mj_objectArrayWithKeyValuesArray:object[slugName]];
             [self.sectionDatas addObject:roomList];//每个section下的roomList数组
         }
+        
+        //解析分类轮播Model
+        NSArray *remenArray = [QMRemenCateModel mj_objectArrayWithKeyValuesArray:object[@"ios-remenfenlei"]];
+        self.remenCates = remenArray;
+        
         dispatch_group_leave(group);
     } failure:^(NSError *error) {
         dispatch_group_leave(group);
@@ -124,9 +131,10 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
     switch (indexPath.section) {
         case 0: //banner
         {
-            MSBaseBannerView *bannerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kBannerCellID forIndexPath:indexPath];
-            [bannerView fillWithBannerModels:self.bannerList];
+            MSQMBannerView *bannerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kBannerCellID forIndexPath:indexPath];
+            [bannerView fillWithBannerModels:self.bannerList cateModels:self.remenCates];
             bannerView.delegate = self;
+            bannerView.cateDelegate = self;
             return bannerView;
         }
             break;
@@ -146,7 +154,7 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0://banner
-            return [MSBaseBannerView sectionHeaderViewSize];
+            return [MSQMBannerView sectionHeaderViewSize];
             break;
         default:
             return [MSBaseSectionHeaderView sectionHeaderViewSize];

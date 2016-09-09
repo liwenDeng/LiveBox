@@ -88,6 +88,8 @@
 		BC89F1651D7D630D00F0A2B5 /* MSDYHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1641D7D630D00F0A2B5 /* MSDYHomeVC.m */; };
 		BC89F1681D7D639B00F0A2B5 /* MSBaseBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1671D7D639B00F0A2B5 /* MSBaseBannerView.m */; };
 		BC89F1711D7D67E000F0A2B5 /* DYApiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1701D7D67E000F0A2B5 /* DYApiTest.m */; };
+		BC9A811A1D826035005A98C7 /* MSBaseCateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A81191D826035005A98C7 /* MSBaseCateModel.m */; };
+		BC9A811D1D82621E005A98C7 /* QMRemenCateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A811C1D82621E005A98C7 /* QMRemenCateModel.m */; };
 		BD58217F29140CCA0B6EDAD4 /* libPods-MSLiveBoxUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1102CDE6BCDBD04DAAFBA160 /* libPods-MSLiveBoxUITests.a */; };
 		CB4A7411D847D7FA1565B443 /* libPods-MSLiveBoxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A090FD0BFA4E3C2E069C57 /* libPods-MSLiveBoxTests.a */; };
 /* End PBXBuildFile section */
@@ -267,6 +269,10 @@
 		BC89F1671D7D639B00F0A2B5 /* MSBaseBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseBannerView.m; sourceTree = "<group>"; };
 		BC89F16F1D7D67E000F0A2B5 /* DYApiTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYApiTest.h; sourceTree = "<group>"; };
 		BC89F1701D7D67E000F0A2B5 /* DYApiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYApiTest.m; sourceTree = "<group>"; };
+		BC9A81181D826035005A98C7 /* MSBaseCateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseCateModel.h; sourceTree = "<group>"; };
+		BC9A81191D826035005A98C7 /* MSBaseCateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseCateModel.m; sourceTree = "<group>"; };
+		BC9A811B1D82621E005A98C7 /* QMRemenCateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMRemenCateModel.h; sourceTree = "<group>"; };
+		BC9A811C1D82621E005A98C7 /* QMRemenCateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMRemenCateModel.m; sourceTree = "<group>"; };
 		D445774BD1E46A89DC9A379E /* Pods-MSLiveBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSLiveBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSLiveBox/Pods-MSLiveBox.release.xcconfig"; sourceTree = "<group>"; };
 		D5E08D1F21825E840DE7A08F /* libPods-MSLiveBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSLiveBox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BFE8307EF373C45D5835B9 /* Pods-MSLiveBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSLiveBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSLiveBox/Pods-MSLiveBox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -390,6 +396,8 @@
 				BC6A36D51D7EA80E009639C9 /* MSModelAdapterProtocol.h */,
 				BC6A36D61D7EA80E009639C9 /* MSRoomCellModel.h */,
 				BC6A36D71D7EA80E009639C9 /* MSRoomCellModel.m */,
+				BC9A81181D826035005A98C7 /* MSBaseCateModel.h */,
+				BC9A81191D826035005A98C7 /* MSBaseCateModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -444,6 +452,8 @@
 				BC6A371B1D7EBEFF009639C9 /* QMRoomModel.m */,
 				BC6A37261D7EC7FA009639C9 /* QMCateModel.h */,
 				BC6A37271D7EC7FA009639C9 /* QMCateModel.m */,
+				BC9A811B1D82621E005A98C7 /* QMRemenCateModel.h */,
+				BC9A811C1D82621E005A98C7 /* QMRemenCateModel.m */,
 			);
 			name = QMModel;
 			sourceTree = "<group>";
@@ -1140,6 +1150,7 @@
 				BC6A370D1D7EB4B2009639C9 /* MSPlayerToolView.m in Sources */,
 				BC89F0A61D7D47F700F0A2B5 /* AppDelegate.m in Sources */,
 				BC6A37161D7EBE75009639C9 /* NSDate+MSExtension.m in Sources */,
+				BC9A811D1D82621E005A98C7 /* QMRemenCateModel.m in Sources */,
 				BC89F1551D7D56EA00F0A2B5 /* MSHomeBaseCollectionVC.m in Sources */,
 				BC89F1511D7D550500F0A2B5 /* ZJScrollSegmentView.m in Sources */,
 				BC89F1131D7D517000F0A2B5 /* CYLTabBarController.m in Sources */,
@@ -1162,6 +1173,7 @@
 				BC89F13F1D7D549700F0A2B5 /* NSString+Util.m in Sources */,
 				BC89F11B1D7D517000F0A2B5 /* ZCApiUploadAction.m in Sources */,
 				BC89F1351D7D53F500F0A2B5 /* MSLiveViewController.m in Sources */,
+				BC9A811A1D826035005A98C7 /* MSBaseCateModel.m in Sources */,
 				BC89F1161D7D517000F0A2B5 /* MSCircleBaseCell.m in Sources */,
 				BC89F1521D7D550500F0A2B5 /* ZJSegmentStyle.m in Sources */,
 				BC6A36C11D7E7377009639C9 /* UIView+RoundedCorner.m in Sources */,

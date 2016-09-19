@@ -44,6 +44,9 @@
 		BC6A37281D7EC7FA009639C9 /* QMCateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A37271D7EC7FA009639C9 /* QMCateModel.m */; };
 		BC6B65991D7FA9A700714941 /* MSQMHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B65981D7FA9A700714941 /* MSQMHomeVC.m */; };
 		BC6B659F1D7FE8E200714941 /* MSQMBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B659E1D7FE8E200714941 /* MSQMBannerView.m */; };
+		BC6CF6C71D87FDCB007A2E98 /* MSBasePlayerInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6CF6C61D87FDCB007A2E98 /* MSBasePlayerInfoModel.m */; };
+		BC6CF6CA1D87FDE5007A2E98 /* QMRoomPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6CF6C91D87FDE5007A2E98 /* QMRoomPlayerModel.m */; };
+		BC84C4B31D87F4260089E9C9 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC84C4B21D87F4260089E9C9 /* IJKMediaFramework.framework */; };
 		BC89F0A31D7D47F700F0A2B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F0A21D7D47F700F0A2B5 /* main.m */; };
 		BC89F0A61D7D47F700F0A2B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F0A51D7D47F700F0A2B5 /* AppDelegate.m */; };
 		BC89F0AC1D7D47F700F0A2B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC89F0AA1D7D47F700F0A2B5 /* Main.storyboard */; };
@@ -177,6 +180,11 @@
 		BC6B65981D7FA9A700714941 /* MSQMHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSQMHomeVC.m; sourceTree = "<group>"; };
 		BC6B659D1D7FE8E200714941 /* MSQMBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSQMBannerView.h; sourceTree = "<group>"; };
 		BC6B659E1D7FE8E200714941 /* MSQMBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSQMBannerView.m; sourceTree = "<group>"; };
+		BC6CF6C51D87FDCB007A2E98 /* MSBasePlayerInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBasePlayerInfoModel.h; sourceTree = "<group>"; };
+		BC6CF6C61D87FDCB007A2E98 /* MSBasePlayerInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBasePlayerInfoModel.m; sourceTree = "<group>"; };
+		BC6CF6C81D87FDE5007A2E98 /* QMRoomPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMRoomPlayerModel.h; sourceTree = "<group>"; };
+		BC6CF6C91D87FDE5007A2E98 /* QMRoomPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMRoomPlayerModel.m; sourceTree = "<group>"; };
+		BC84C4B21D87F4260089E9C9 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		BC89F09E1D7D47F700F0A2B5 /* MSLiveBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSLiveBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC89F0A21D7D47F700F0A2B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC89F0A41D7D47F700F0A2B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -287,6 +295,7 @@
 				BC6A37021D7EB0DD009639C9 /* libbz2.tbd in Frameworks */,
 				BC6A37001D7EB0D7009639C9 /* libz.tbd in Frameworks */,
 				BC6A36FE1D7EB0D1009639C9 /* VideoToolbox.framework in Frameworks */,
+				BC84C4B31D87F4260089E9C9 /* IJKMediaFramework.framework in Frameworks */,
 				BC6A36FC1D7EB0CB009639C9 /* UIKit.framework in Frameworks */,
 				BC6A36FA1D7EB0C4009639C9 /* QuartzCore.framework in Frameworks */,
 				BC6A36F81D7EB0BC009639C9 /* OpenGLES.framework in Frameworks */,
@@ -336,6 +345,7 @@
 		8B3B5383522C1FDF37E22E60 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC84C4B21D87F4260089E9C9 /* IJKMediaFramework.framework */,
 				BC6A37011D7EB0DD009639C9 /* libbz2.tbd */,
 				BC6A36FF1D7EB0D7009639C9 /* libz.tbd */,
 				BC6A36FD1D7EB0D1009639C9 /* VideoToolbox.framework */,
@@ -398,6 +408,8 @@
 				BC6A36D71D7EA80E009639C9 /* MSRoomCellModel.m */,
 				BC9A81181D826035005A98C7 /* MSBaseCateModel.h */,
 				BC9A81191D826035005A98C7 /* MSBaseCateModel.m */,
+				BC6CF6C51D87FDCB007A2E98 /* MSBasePlayerInfoModel.h */,
+				BC6CF6C61D87FDCB007A2E98 /* MSBasePlayerInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -454,6 +466,8 @@
 				BC6A37271D7EC7FA009639C9 /* QMCateModel.m */,
 				BC9A811B1D82621E005A98C7 /* QMRemenCateModel.h */,
 				BC9A811C1D82621E005A98C7 /* QMRemenCateModel.m */,
+				BC6CF6C81D87FDE5007A2E98 /* QMRoomPlayerModel.h */,
+				BC6CF6C91D87FDE5007A2E98 /* QMRoomPlayerModel.m */,
 			);
 			name = QMModel;
 			sourceTree = "<group>";
@@ -1158,6 +1172,7 @@
 				BC6A37081D7EB31C009639C9 /* MSBasePlayerView.m in Sources */,
 				BC89F11D1D7D517000F0A2B5 /* ZCNetworking.m in Sources */,
 				BC89F1181D7D517000F0A2B5 /* ZCApiAction.m in Sources */,
+				BC6CF6C71D87FDCB007A2E98 /* MSBasePlayerInfoModel.m in Sources */,
 				BC89F1191D7D517000F0A2B5 /* ZCApiDownloadAction.m in Sources */,
 				BC89F1501D7D550500F0A2B5 /* ZJScrollPageView.m in Sources */,
 				BC6A37121D7EBE00009639C9 /* MSNetworking+QMAPI.m in Sources */,
@@ -1166,6 +1181,7 @@
 				BC89F11C1D7D517000F0A2B5 /* ZCChainProcessor.m in Sources */,
 				BC89F1321D7D53D000F0A2B5 /* MSMyCenterViewController.m in Sources */,
 				BC89F11A1D7D517000F0A2B5 /* ZCApiRunner.m in Sources */,
+				BC6CF6CA1D87FDE5007A2E98 /* QMRoomPlayerModel.m in Sources */,
 				BC89F1681D7D639B00F0A2B5 /* MSBaseBannerView.m in Sources */,
 				BC89F14D1D7D550500F0A2B5 /* UIView+ZJFrame.m in Sources */,
 				BC89F1611D7D5F4F00F0A2B5 /* MSNetworking+DYAPI.m in Sources */,

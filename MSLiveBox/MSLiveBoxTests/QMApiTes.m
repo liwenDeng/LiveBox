@@ -11,6 +11,7 @@
 #import "MSNetworking+QMAPI.h"
 #import "QMCateModel.h"
 #import "QMRoomModel.h"
+#import "QMRoomPlayerModel.h"
 
 @implementation QMApiTes
 
@@ -48,4 +49,15 @@
     }];
 }
 
+
+- (void)testQMRoomInfo {
+
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getQMRoomPlayerInfoWithRoomId:@"554812" success:^(NSDictionary *object) {
+            
+        } failure:^(NSError *error) {
+            
+        }];
+    }]
+}
 @end

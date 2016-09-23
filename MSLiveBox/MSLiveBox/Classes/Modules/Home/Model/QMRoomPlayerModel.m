@@ -40,7 +40,12 @@
 @implementation QMRoomPlayerSource
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
-    return @{@"subsource":@"0"};
+    return @{@"subsource0":@"0",
+             @"subsource1":@"1",
+             @"subsource2":@"2",
+             @"subsource3":@"3",
+             @"subsource4":@"4",
+             @"subsource5":@"5"};
 }
 
 @end

@@ -53,11 +53,14 @@
 - (void)testQMRoomInfo {
 
     [self waitForGroup:^(dispatch_group_t group) {
-        [MSNetworking getQMRoomPlayerInfoWithRoomId:@"554812" success:^(NSDictionary *object) {
-            
+        [MSNetworking getQMRoomPlayerInfoWithRoomId:@"1312406" success:^(NSDictionary *object) {
+            QMRoomPlayerModel *playerModel = [QMRoomPlayerModel mj_objectWithKeyValues:object];
+            NSLog(@"finished");
+            dispatch_group_leave(group);
         } failure:^(NSError *error) {
-            
+            dispatch_group_leave(group);
         }];
-    }]
+    }];
+    
 }
 @end

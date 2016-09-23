@@ -60,7 +60,13 @@
 
 @interface QMRoomPlayerSource : NSObject
 
-@property (nonatomic, strong) QMRoomPlayerSubSource* subsource;
+@property (nonatomic, strong) QMRoomPlayerSubSource* subsource0;
+@property (nonatomic, strong) QMRoomPlayerSubSource* subsource1;
+@property (nonatomic, strong) QMRoomPlayerSubSource* subsource2;
+@property (nonatomic, strong) QMRoomPlayerSubSource* subsource3;
+@property (nonatomic, strong) QMRoomPlayerSubSource* subsource4;
+@property (nonatomic, strong) QMRoomPlayerSubSource* subsource5;
+
 @property (nonatomic, strong) NSString *main_pc;
 @property (nonatomic, strong) NSString *main_mobile;
 

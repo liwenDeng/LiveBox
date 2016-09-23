@@ -8,6 +8,8 @@
 
 #import "MSLiveSteamViewController.h"
 #import "MSBasePlayerView.h"
+#import "MSNetworking+PandaAPI.h"
+#import "PDRoomPlayerModel.h"
 
 @interface MSLiveSteamViewController () <MSBasePlayerViewDelegate>
 
@@ -71,7 +73,18 @@
             }];
         }
             break;
-            
+        case MSLivetypePanda:
+        {
+            //http://hdl3a.douyucdn.cn/live/274874rwL1KFJ5nf.flv?wsAuth=3a05704f490cb9d1dd0a63a578468fb7&token=web-douyu-0-274874-b309ce3a7670fac1d82cb4a7c31ca150&logo=0&expire=0&did=6971B4A9-26A2-47B8-B6E1-8DF289E5235F
+            [MSNetworking getPandaRoomPlayerInfoWithRoomId:self.roomModel.roomId success:^(NSDictionary *object) {
+                PDRoomPlayerModel *playerModel = [PDRoomPlayerModel mj_objectWithKeyValues:object[@"data"][@"info"]];
+                 NSLog(@"video src:%@",playerModel.playerUrl);
+                [self.playerView playWithVideoSrc:playerModel.playerUrl];
+            } failure:^(NSError *error) {
+                
+            }];
+        }
+            break;
         default:
             break;
     }

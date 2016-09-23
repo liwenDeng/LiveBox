@@ -21,6 +21,12 @@
 
 - (void)fillWithTagName:(NSString *)tagName atIndexPath:(NSIndexPath *)indexPath;
 
+//全民自定义
+- (void)qm_fillWithTagName:(NSString *)tagName atIndexPath:(NSIndexPath *)indexPath moreBtnName:(NSString *)btnName;
+
+//熊猫热门自定义
+- (void)pd_fillWithTagName:(NSString *)tagName cateIcon:(NSString*)url showMore:(BOOL)show atIndexPath:(NSIndexPath *)indexPath;
+
 + (CGSize)sectionHeaderViewSize;
 
 @end

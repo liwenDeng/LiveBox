@@ -10,6 +10,7 @@
 #import "ZJScrollPageView.h"
 #import "MSDYHomeVC.h"
 #import "MSQMHomeVC.h"
+#import "MSPandaHomeVC.h"
 
 @interface MSHomeViewController ()
 
@@ -58,10 +59,13 @@
     MSDYHomeVC *vc1 = [[MSDYHomeVC alloc]init];
     vc1.title = @"斗鱼TV";
     
-    MSQMHomeVC *vc2 = [MSQMHomeVC new];
+    MSQMHomeVC *vc2 = [[MSQMHomeVC alloc]init];
     vc2.title = @"全民TV";
     
-    NSArray *childVcs = [NSArray arrayWithObjects:vc1, vc2,nil];
+    MSPandaHomeVC *vc3 = [[MSPandaHomeVC alloc]init];
+    vc3.title = @"熊猫TV";
+    
+    NSArray *childVcs = [NSArray arrayWithObjects:vc1, vc2,vc3,nil];
     return childVcs;
 }
 - (void)didReceiveMemoryWarning {

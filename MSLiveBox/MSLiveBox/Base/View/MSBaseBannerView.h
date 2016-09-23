@@ -28,10 +28,16 @@ static const CGFloat kPageControlHeight = 30;
 
 @property (nonatomic, weak) id<MSBaseBannerViewDelegate> delegate;
 
-- (void)setupSubviews;
+- (void)setupSubviewsFrame:(CGRect)frame;
+
+- (void)updateFrame:(CGRect)frame;
 
 - (void)fillWithBannerModels:(NSArray *)bannerModels;
 
 + (CGSize)sectionHeaderViewSize;
+
+@end
+
+@interface MSBannerCell : MSCircleBaseCell
 
 @end

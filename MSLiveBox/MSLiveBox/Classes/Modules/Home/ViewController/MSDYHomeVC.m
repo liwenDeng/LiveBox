@@ -67,7 +67,7 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
     [self.collectionView registerClass:[DYFaceRoomCell class] forCellWithReuseIdentifier:kFaceRoomCellID];
 }
 
-#pragma mark - MSHTTPRequestDelegate
+#pragma mark - MSHTTPRequestProtocol
 - (void)refresh {
     dispatch_group_t group = dispatch_group_create();
     

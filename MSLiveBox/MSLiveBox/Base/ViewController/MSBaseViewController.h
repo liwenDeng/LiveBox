@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol MSHTTPRequestDelegate <NSObject>
+@protocol MSHTTPRequestProtocol <NSObject>
 
 @optional
 - (void)refresh;
@@ -17,6 +17,6 @@
 @end
 
 
-@interface MSBaseViewController : UIViewController <MSHTTPRequestDelegate>
+@interface MSBaseViewController : UIViewController <MSHTTPRequestProtocol>
 
 @end

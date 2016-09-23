@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2DF555F1E168FA5525410E2C /* libPods-MSLiveBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E08D1F21825E840DE7A08F /* libPods-MSLiveBox.a */; };
+		BC51CBE81D8FDE0000775EEB /* MSNetworking+PandaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC51CBE71D8FDE0000775EEB /* MSNetworking+PandaAPI.m */; };
+		BC548DEA1D950021000C5C85 /* PDApiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC548DE91D950021000C5C85 /* PDApiTest.m */; };
+		BC548DED1D950216000C5C85 /* PDRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC548DEC1D950216000C5C85 /* PDRoomModel.m */; };
+		BC548DF01D950920000C5C85 /* PDRoomPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC548DEF1D950920000C5C85 /* PDRoomPlayerModel.m */; };
+		BC548DF41D951E98000C5C85 /* MSPandaHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC548DF31D951E98000C5C85 /* MSPandaHomeVC.m */; };
+		BC63FA6A1D90D550005929AD /* PDBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC63FA691D90D550005929AD /* PDBannerModel.m */; };
 		BC6A36C01D7E7377009639C9 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A36B91D7E7377009639C9 /* UIImage+RoundedCorner.m */; };
 		BC6A36C11D7E7377009639C9 /* UIView+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A36BB1D7E7377009639C9 /* UIView+RoundedCorner.m */; };
 		BC6A36C21D7E7377009639C9 /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A36BD1D7E7377009639C9 /* UIImageView+CornerRadius.m */; };
@@ -46,7 +52,6 @@
 		BC6B659F1D7FE8E200714941 /* MSQMBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B659E1D7FE8E200714941 /* MSQMBannerView.m */; };
 		BC6CF6C71D87FDCB007A2E98 /* MSBasePlayerInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6CF6C61D87FDCB007A2E98 /* MSBasePlayerInfoModel.m */; };
 		BC6CF6CA1D87FDE5007A2E98 /* QMRoomPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6CF6C91D87FDE5007A2E98 /* QMRoomPlayerModel.m */; };
-		BC84C4B31D87F4260089E9C9 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC84C4B21D87F4260089E9C9 /* IJKMediaFramework.framework */; };
 		BC89F0A31D7D47F700F0A2B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F0A21D7D47F700F0A2B5 /* main.m */; };
 		BC89F0A61D7D47F700F0A2B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F0A51D7D47F700F0A2B5 /* AppDelegate.m */; };
 		BC89F0AC1D7D47F700F0A2B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC89F0AA1D7D47F700F0A2B5 /* Main.storyboard */; };
@@ -120,6 +125,18 @@
 		1CC6B5193CCF8DCCDC79FDA4 /* Pods-MSLiveBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSLiveBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSLiveBoxTests/Pods-MSLiveBoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		55CDDE664BCFDF4EC4E135C0 /* Pods-MSLiveBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSLiveBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSLiveBoxUITests/Pods-MSLiveBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7A090FD0BFA4E3C2E069C57 /* libPods-MSLiveBoxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSLiveBoxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC51CBE61D8FDE0000775EEB /* MSNetworking+PandaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSNetworking+PandaAPI.h"; sourceTree = "<group>"; };
+		BC51CBE71D8FDE0000775EEB /* MSNetworking+PandaAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MSNetworking+PandaAPI.m"; sourceTree = "<group>"; };
+		BC548DE81D950021000C5C85 /* PDApiTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDApiTest.h; sourceTree = "<group>"; };
+		BC548DE91D950021000C5C85 /* PDApiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDApiTest.m; sourceTree = "<group>"; };
+		BC548DEB1D950216000C5C85 /* PDRoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRoomModel.h; sourceTree = "<group>"; };
+		BC548DEC1D950216000C5C85 /* PDRoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRoomModel.m; sourceTree = "<group>"; };
+		BC548DEE1D950920000C5C85 /* PDRoomPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRoomPlayerModel.h; sourceTree = "<group>"; };
+		BC548DEF1D950920000C5C85 /* PDRoomPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRoomPlayerModel.m; sourceTree = "<group>"; };
+		BC548DF21D951E98000C5C85 /* MSPandaHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPandaHomeVC.h; sourceTree = "<group>"; };
+		BC548DF31D951E98000C5C85 /* MSPandaHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPandaHomeVC.m; sourceTree = "<group>"; };
+		BC63FA681D90D550005929AD /* PDBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBannerModel.h; sourceTree = "<group>"; };
+		BC63FA691D90D550005929AD /* PDBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBannerModel.m; sourceTree = "<group>"; };
 		BC6A36B81D7E7377009639C9 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		BC6A36B91D7E7377009639C9 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		BC6A36BA1D7E7377009639C9 /* UIView+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorner.h"; sourceTree = "<group>"; };
@@ -184,7 +201,6 @@
 		BC6CF6C61D87FDCB007A2E98 /* MSBasePlayerInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBasePlayerInfoModel.m; sourceTree = "<group>"; };
 		BC6CF6C81D87FDE5007A2E98 /* QMRoomPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMRoomPlayerModel.h; sourceTree = "<group>"; };
 		BC6CF6C91D87FDE5007A2E98 /* QMRoomPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMRoomPlayerModel.m; sourceTree = "<group>"; };
-		BC84C4B21D87F4260089E9C9 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		BC89F09E1D7D47F700F0A2B5 /* MSLiveBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSLiveBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC89F0A21D7D47F700F0A2B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC89F0A41D7D47F700F0A2B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -295,7 +311,6 @@
 				BC6A37021D7EB0DD009639C9 /* libbz2.tbd in Frameworks */,
 				BC6A37001D7EB0D7009639C9 /* libz.tbd in Frameworks */,
 				BC6A36FE1D7EB0D1009639C9 /* VideoToolbox.framework in Frameworks */,
-				BC84C4B31D87F4260089E9C9 /* IJKMediaFramework.framework in Frameworks */,
 				BC6A36FC1D7EB0CB009639C9 /* UIKit.framework in Frameworks */,
 				BC6A36FA1D7EB0C4009639C9 /* QuartzCore.framework in Frameworks */,
 				BC6A36F81D7EB0BC009639C9 /* OpenGLES.framework in Frameworks */,
@@ -345,7 +360,6 @@
 		8B3B5383522C1FDF37E22E60 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC84C4B21D87F4260089E9C9 /* IJKMediaFramework.framework */,
 				BC6A37011D7EB0DD009639C9 /* libbz2.tbd */,
 				BC6A36FF1D7EB0D7009639C9 /* libz.tbd */,
 				BC6A36FD1D7EB0D1009639C9 /* VideoToolbox.framework */,
@@ -364,6 +378,28 @@
 				1102CDE6BCDBD04DAAFBA160 /* libPods-MSLiveBoxUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC548DF11D951E6F000C5C85 /* Panda */ = {
+			isa = PBXGroup;
+			children = (
+				BC548DF21D951E98000C5C85 /* MSPandaHomeVC.h */,
+				BC548DF31D951E98000C5C85 /* MSPandaHomeVC.m */,
+			);
+			name = Panda;
+			sourceTree = "<group>";
+		};
+		BC63FA671D90D52C005929AD /* PandaModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC63FA681D90D550005929AD /* PDBannerModel.h */,
+				BC63FA691D90D550005929AD /* PDBannerModel.m */,
+				BC548DEB1D950216000C5C85 /* PDRoomModel.h */,
+				BC548DEC1D950216000C5C85 /* PDRoomModel.m */,
+				BC548DEE1D950920000C5C85 /* PDRoomPlayerModel.h */,
+				BC548DEF1D950920000C5C85 /* PDRoomPlayerModel.m */,
+			);
+			name = PandaModel;
 			sourceTree = "<group>";
 		};
 		BC6A36B61D7E7377009639C9 /* UIView+MSUtil */ = {
@@ -417,6 +453,7 @@
 		BC6A36DC1D7EA8A8009639C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC63FA671D90D52C005929AD /* PandaModel */,
 				BC6A370F1D7EBDCF009639C9 /* QMModel */,
 				BC6A370E1D7EBDB9009639C9 /* DYModel */,
 			);
@@ -552,6 +589,8 @@
 				BC89F1701D7D67E000F0A2B5 /* DYApiTest.m */,
 				BC6A37201D7EC33F009639C9 /* QMApiTes.h */,
 				BC6A37211D7EC33F009639C9 /* QMApiTes.m */,
+				BC548DE81D950021000C5C85 /* PDApiTest.h */,
+				BC548DE91D950021000C5C85 /* PDApiTest.m */,
 				BC89F0BD1D7D47F700F0A2B5 /* Info.plist */,
 			);
 			path = MSLiveBoxTests;
@@ -684,6 +723,7 @@
 				BC89F12D1D7D53A900F0A2B5 /* MSHomeViewController.h */,
 				BC89F12E1D7D53A900F0A2B5 /* MSHomeViewController.m */,
 				BC89F1621D7D62F100F0A2B5 /* Douyu */,
+				BC548DF11D951E6F000C5C85 /* Panda */,
 				BC6B65961D7FA98100714941 /* QM */,
 			);
 			path = ViewController;
@@ -759,6 +799,8 @@
 				BC89F1601D7D5F4F00F0A2B5 /* MSNetworking+DYAPI.m */,
 				BC6A37101D7EBE00009639C9 /* MSNetworking+QMAPI.h */,
 				BC6A37111D7EBE00009639C9 /* MSNetworking+QMAPI.m */,
+				BC51CBE61D8FDE0000775EEB /* MSNetworking+PandaAPI.h */,
+				BC51CBE71D8FDE0000775EEB /* MSNetworking+PandaAPI.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1162,6 +1204,7 @@
 				BC89F1201D7D519600F0A2B5 /* MSNetworking.m in Sources */,
 				BC89F1291D7D52B400F0A2B5 /* MSBaseNavigationController.m in Sources */,
 				BC6A370D1D7EB4B2009639C9 /* MSPlayerToolView.m in Sources */,
+				BC63FA6A1D90D550005929AD /* PDBannerModel.m in Sources */,
 				BC89F0A61D7D47F700F0A2B5 /* AppDelegate.m in Sources */,
 				BC6A37161D7EBE75009639C9 /* NSDate+MSExtension.m in Sources */,
 				BC9A811D1D82621E005A98C7 /* QMRemenCateModel.m in Sources */,
@@ -1173,6 +1216,7 @@
 				BC89F11D1D7D517000F0A2B5 /* ZCNetworking.m in Sources */,
 				BC89F1181D7D517000F0A2B5 /* ZCApiAction.m in Sources */,
 				BC6CF6C71D87FDCB007A2E98 /* MSBasePlayerInfoModel.m in Sources */,
+				BC548DF01D950920000C5C85 /* PDRoomPlayerModel.m in Sources */,
 				BC89F1191D7D517000F0A2B5 /* ZCApiDownloadAction.m in Sources */,
 				BC89F1501D7D550500F0A2B5 /* ZJScrollPageView.m in Sources */,
 				BC6A37121D7EBE00009639C9 /* MSNetworking+QMAPI.m in Sources */,
@@ -1188,6 +1232,7 @@
 				BC6A36DB1D7EA80E009639C9 /* MSRoomCellModel.m in Sources */,
 				BC89F13F1D7D549700F0A2B5 /* NSString+Util.m in Sources */,
 				BC89F11B1D7D517000F0A2B5 /* ZCApiUploadAction.m in Sources */,
+				BC51CBE81D8FDE0000775EEB /* MSNetworking+PandaAPI.m in Sources */,
 				BC89F1351D7D53F500F0A2B5 /* MSLiveViewController.m in Sources */,
 				BC9A811A1D826035005A98C7 /* MSBaseCateModel.m in Sources */,
 				BC89F1161D7D517000F0A2B5 /* MSCircleBaseCell.m in Sources */,
@@ -1196,6 +1241,7 @@
 				BC89F12F1D7D53A900F0A2B5 /* MSHomeViewController.m in Sources */,
 				BC89F1111D7D517000F0A2B5 /* CYLPlusButton.m in Sources */,
 				BC89F1231D7D51F700F0A2B5 /* MSTabBarControllerConfig.m in Sources */,
+				BC548DF41D951E98000C5C85 /* MSPandaHomeVC.m in Sources */,
 				BC89F1121D7D517000F0A2B5 /* CYLTabBar.m in Sources */,
 				BC6A37191D7EBEF2009639C9 /* QMBannerModel.m in Sources */,
 				BC6B65991D7FA9A700714941 /* MSQMHomeVC.m in Sources */,
@@ -1205,6 +1251,7 @@
 				BC6A36C01D7E7377009639C9 /* UIImage+RoundedCorner.m in Sources */,
 				BC89F1141D7D517000F0A2B5 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				BC89F1151D7D517000F0A2B5 /* FPSLabel.m in Sources */,
+				BC548DED1D950216000C5C85 /* PDRoomModel.m in Sources */,
 				BC89F13E1D7D549700F0A2B5 /* NSString+Code.m in Sources */,
 				BC6A36C31D7E7377009639C9 /* UIView+MSUtil.m in Sources */,
 				BC89F1381D7D540600F0A2B5 /* MSFollowViewController.m in Sources */,
@@ -1223,6 +1270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC548DEA1D950021000C5C85 /* PDApiTest.m in Sources */,
 				BC6A371F1D7EC2EA009639C9 /* MSAPITest.m in Sources */,
 				BC6A37221D7EC33F009639C9 /* QMApiTes.m in Sources */,
 				BC89F0BC1D7D47F700F0A2B5 /* MSLiveBoxTests.m in Sources */,

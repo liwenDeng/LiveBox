@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MSModelAdapterProtocol.h"
 
-@interface QMBannerModel : NSObject<MSModelAdapterProtocol>
+@interface QMBannerModel : NSObject <MSModelAdapterProtocol>
 
 @property (nonatomic, copy) NSString *room_id;
 

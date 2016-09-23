@@ -86,7 +86,8 @@
 }
 
 //5.所有直播房间列表
-//http://www.quanmin.tv/json/play/list.json?0913170848
+//第一页list  http://www.quanmin.tv/json/play/list.json?0913170848
+//第二页list2 http://www.quanmin.tv/json/play/list_1.json?0919165930
 + (NSURLSessionDataTask *)getQMAllLiveRooms:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     NSDate *date = [NSDate date];
     NSInteger month = date.ms_month;

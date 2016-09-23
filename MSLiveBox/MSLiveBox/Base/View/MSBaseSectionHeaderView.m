@@ -50,10 +50,10 @@
         [self addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(10);
-            make.top.equalTo(lineView.mas_bottom).offset(10);
-            make.size.mas_equalTo(CGSizeMake(30, 30));
+            make.top.equalTo(lineView.mas_bottom).offset(5);
+            make.size.mas_equalTo(CGSizeMake(25, 25));
         }];
-        view.backgroundColor = [UIColor redColor];
+//        view.backgroundColor = [UIColor redColor];
         view;
     });
     
@@ -91,6 +91,17 @@
 - (void)fillWithTagName:(NSString *)tagName atIndexPath:(NSIndexPath *)indexPath {
     self.titleLabel.text = tagName;
     self.indexPath = indexPath;
+}
+
+- (void)qm_fillWithTagName:(NSString *)tagName atIndexPath:(NSIndexPath *)indexPath moreBtnName:(NSString *)btnName {
+    [self fillWithTagName:tagName atIndexPath:indexPath];
+    [self.arrowBtn setTitle:btnName forState:(UIControlStateNormal)];
+}
+
+- (void)pd_fillWithTagName:(NSString *)tagName cateIcon:(NSString*)url showMore:(BOOL)show atIndexPath:(NSIndexPath *)indexPath {
+    [self fillWithTagName:tagName atIndexPath:indexPath];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:url]];
+    self.arrowBtn.hidden = !show;
 }
 
 - (void)moreBtnClicked:(UIButton *)sender {

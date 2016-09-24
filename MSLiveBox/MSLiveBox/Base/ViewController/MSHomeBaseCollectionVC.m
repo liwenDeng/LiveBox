@@ -33,6 +33,11 @@
     [self registCellClass];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 #pragma mark - MSHomeBaseCollectionVCDelegate
 - (void)registCellClass {
 
@@ -59,6 +64,17 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeZero;
+}
+
+#pragma mark - 旋转控制
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end

@@ -14,8 +14,13 @@
     return @{@"cateId": @"id"};
 }
 
-- (id)convertToUniteModel {
-    return [[MSBaseCateModel alloc]initWithCateId:self.cateId title:self.title thumb:self.thumb];
+- (MSBaseCateModel *)convertToCateModel {
+    return [[MSBaseCateModel alloc]initWithCateId:self.ext.classification title:self.title thumb:self.thumb type:(MSLivetypeQuanMin)];
 }
+
+@end
+
+@implementation QMRemenCateExt
+
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2DF555F1E168FA5525410E2C /* libPods-MSLiveBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E08D1F21825E840DE7A08F /* libPods-MSLiveBox.a */; };
+		BC438DDC1D962430004645CA /* MSCateCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC438DDB1D962430004645CA /* MSCateCollectionVC.m */; };
 		BC51CBE81D8FDE0000775EEB /* MSNetworking+PandaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC51CBE71D8FDE0000775EEB /* MSNetworking+PandaAPI.m */; };
 		BC548DEA1D950021000C5C85 /* PDApiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC548DE91D950021000C5C85 /* PDApiTest.m */; };
 		BC548DED1D950216000C5C85 /* PDRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC548DEC1D950216000C5C85 /* PDRoomModel.m */; };
@@ -125,6 +126,8 @@
 		1CC6B5193CCF8DCCDC79FDA4 /* Pods-MSLiveBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSLiveBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSLiveBoxTests/Pods-MSLiveBoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		55CDDE664BCFDF4EC4E135C0 /* Pods-MSLiveBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSLiveBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSLiveBoxUITests/Pods-MSLiveBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7A090FD0BFA4E3C2E069C57 /* libPods-MSLiveBoxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSLiveBoxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC438DDA1D962430004645CA /* MSCateCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCateCollectionVC.h; sourceTree = "<group>"; };
+		BC438DDB1D962430004645CA /* MSCateCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCateCollectionVC.m; sourceTree = "<group>"; };
 		BC51CBE61D8FDE0000775EEB /* MSNetworking+PandaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSNetworking+PandaAPI.h"; sourceTree = "<group>"; };
 		BC51CBE71D8FDE0000775EEB /* MSNetworking+PandaAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MSNetworking+PandaAPI.m"; sourceTree = "<group>"; };
 		BC548DE81D950021000C5C85 /* PDApiTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDApiTest.h; sourceTree = "<group>"; };
@@ -722,6 +725,8 @@
 			children = (
 				BC89F12D1D7D53A900F0A2B5 /* MSHomeViewController.h */,
 				BC89F12E1D7D53A900F0A2B5 /* MSHomeViewController.m */,
+				BC438DDA1D962430004645CA /* MSCateCollectionVC.h */,
+				BC438DDB1D962430004645CA /* MSCateCollectionVC.m */,
 				BC89F1621D7D62F100F0A2B5 /* Douyu */,
 				BC548DF11D951E6F000C5C85 /* Panda */,
 				BC6B65961D7FA98100714941 /* QM */,
@@ -1251,6 +1256,7 @@
 				BC6A36C01D7E7377009639C9 /* UIImage+RoundedCorner.m in Sources */,
 				BC89F1141D7D517000F0A2B5 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				BC89F1151D7D517000F0A2B5 /* FPSLabel.m in Sources */,
+				BC438DDC1D962430004645CA /* MSCateCollectionVC.m in Sources */,
 				BC548DED1D950216000C5C85 /* PDRoomModel.m in Sources */,
 				BC89F13E1D7D549700F0A2B5 /* NSString+Code.m in Sources */,
 				BC6A36C31D7E7377009639C9 /* UIView+MSUtil.m in Sources */,

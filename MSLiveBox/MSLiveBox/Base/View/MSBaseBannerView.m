@@ -93,7 +93,7 @@
     NSMutableArray *baseBanners = [NSMutableArray array];
     
     for (id<MSModelAdapterProtocol> bannerModel in bannerModels) {
-        MSBaseBannerModel *model = [bannerModel convertToUniteModel];
+        MSBaseBannerModel *model = [bannerModel convertToBannerModel];
         [urls addObject:model.bigPic];
         [baseBanners addObject:model];
     }

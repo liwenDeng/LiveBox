@@ -15,7 +15,7 @@
     return @{@"room_id": @"id"};
 }
 
-- (id)convertToUniteModel {
+- (MSBaseBannerModel *)convertToBannerModel {
     return [[MSBaseBannerModel alloc]initWithTye:(MSLivetypeQuanMin) roomId:self.room_id title:self.title smallPic:self.thumb bigPic:self.thumb];
 }
 

@@ -63,54 +63,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MSLiveBox/Network/MSNetworking+QMAPI.m"
-            timestampString = "495964836.104425"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "+getQMRoomPlayerInfoWithRoomId:success:failure:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "+[MSNetworking(QMAPI) getQMRoomPlayerInfoWithRoomId:success:failure:]"
-                  moduleName = "MSLiveBox"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dengliwen/LiveBox/MSLiveBox/MSLiveBox/Network/MSNetworking+QMAPI.m"
-                  timestampString = "496316733.820743"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "517">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__69+[MSNetworking(QMAPI) getQMRoomPlayerInfoWithRoomId:success:failure:]_block_invoke"
-                  moduleName = "MSLiveBox"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dengliwen/LiveBox/MSLiveBox/MSLiveBox/Network/MSNetworking+QMAPI.m"
-                  timestampString = "496316733.820939"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MSLiveBoxTests/PDApiTest.m"
             timestampString = "496311642.061683"
             startingColumnNumber = "9223372036854775807"
@@ -127,13 +79,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MSLiveBox/Base/View/MSBaseSectionHeaderView.m"
-            timestampString = "496314377.947143"
+            filePath = "MSLiveBox/Base/ViewController/MSLiveSteamViewController.m"
+            timestampString = "496377353.149576"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "-pd_fillWithTagName:cateIcon:showMore:atIndexPath:"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-requestRoomVideoSrc"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MSLiveBoxTests/DYApiTest.m"
+            timestampString = "496379828.126845"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-testCateList"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MSLiveBox/Network/MSNetworking+PandaAPI.m"
+            timestampString = "496395475.88809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "+getPandaAllLiveListWithCateId:pageNo:success:failure:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -144,11 +128,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MSLiveBox/Base/ViewController/MSLiveSteamViewController.m"
-            timestampString = "496316413.355512"
+            timestampString = "496400448.763964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-requestRoomVideoSrc"
             landmarkType = "5">
          </BreakpointContent>

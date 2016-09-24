@@ -10,7 +10,7 @@
 
 @class QMRoomPlayerLineModel,QMRoomPlayerLiveModel,QMRoomPlayerSource,QMRoomPlayerSubSource;
 
-@interface QMRoomPlayerModel : NSObject
+@interface QMRoomPlayerModel : NSObject <MSModelAdapterProtocol>
 
 @property (nonatomic, strong) NSString *uid; //userid
 @property (nonatomic, strong) NSString *title;
@@ -36,6 +36,8 @@
 @property (nonatomic, strong) NSString *play_at; //开播时间
 @property (nonatomic, strong) NSString *thumb;
 @property (nonatomic, strong) NSString *video;
+
+@property (nonatomic, strong, readonly) NSString *videoUrl;
 
 @end
 

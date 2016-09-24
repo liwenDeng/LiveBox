@@ -14,6 +14,7 @@
 #import "MSBaseSectionHeaderView.h"
 #import "MSNetWorking+PandaApi.h"
 #import "MSLiveSteamViewController.h"
+#import "MSCateCollectionVC.h"
 
 static NSString *const kBannerCellID = @"kPDBannerCell";
 static NSString *const kNormalRoomCellID = @"kPDNormalRoomCell";
@@ -143,7 +144,7 @@ static NSString *const kSectionHeaderID = @"kPDSectionHeaderId";
     NSArray *roomList = sectionModel.items;
     model = roomList[indexPath.row];
     MSLiveSteamViewController *liveVC = [[MSLiveSteamViewController alloc]init];
-    liveVC.roomModel = [model convertToUniteModel];
+    liveVC.roomModel = [model convertToCellModel];
     liveVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:liveVC animated:YES];
 }
@@ -179,7 +180,11 @@ static NSString *const kSectionHeaderID = @"kPDSectionHeaderId";
 
 #pragma mark - MSBaseSectionHeaderViewDelegate
 - (void)sectionHeaderView:(MSBaseSectionHeaderView *)sectionHeaderView clickedMoreButtonAtIndexPath:(NSIndexPath *)indexPath {
-
+    PDRoomSectionModel *cate = self.sectionList[indexPath.section - 1];
+    MSCateCollectionVC *detailVC = [[MSCateCollectionVC alloc]init];
+    detailVC.cateModel = [cate convertToCateModel];
+    detailVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 @end

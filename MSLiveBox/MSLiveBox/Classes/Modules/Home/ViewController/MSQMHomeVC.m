@@ -15,6 +15,8 @@
 #import "MSBaseRoomCell.h"
 #import "MSQMBannerView.h"
 #import "MSBaseSectionHeaderView.h"
+#import "MSLiveSteamViewController.h"
+#import "MSCateCollectionVC.h"
 
 static NSString *const kBannerCellID = @"kQMBannerCell";
 static NSString *const kNormalRoomCellID = @"kNormalRoomCell";
@@ -128,6 +130,27 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
     
 }
 
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    QMLinkModel *linkModel = [[QMLinkModel alloc]init];
+    if (indexPath.section == 1) {
+        //精彩推荐
+        if (indexPath.row == 0) {
+            linkModel = self.recommendations[self.recomStartIndex];
+        }else {
+            linkModel = self.recommendations[self.recomEndIndex];
+        }
+    }else {
+        NSArray *linkModels = self.sectionDatas[indexPath.section - 2];
+        linkModel = linkModels.count > indexPath.row ? linkModels[indexPath.row] : linkModel;
+    }
+    MSLiveSteamViewController *liveVC = [[MSLiveSteamViewController alloc]init];
+    liveVC.roomModel = [linkModel.link_object convertToCellModel];
+    liveVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:liveVC animated:YES];
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.sectionHeaders.count > 0 ? self.sectionHeaders.count + 2 : 0; //加轮播图 + 精彩推荐
@@ -230,7 +253,11 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
 
 #pragma mark - MSQMBannerViewDelegate
 - (void)bannerView:(MSQMBannerView *)bannerView clickedCateCircleAtIndex:(NSInteger)index cateId:(NSString *)cateId {
-    
+    QMRemenCateModel *cateModel = self.remenCates[index];
+    MSCateCollectionVC *detailVC = [[MSCateCollectionVC alloc]init];
+    detailVC.cateModel = [cateModel convertToCateModel];
+    detailVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - MSBaseSectionHeaderViewDelegate
@@ -246,6 +273,13 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
             self.recomEndIndex = 1;
         }
         [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:1]];
+    }else {
+        QMCateModel *cate = self.sectionHeaders[indexPath.section - 2];
+        MSCateCollectionVC *detailVC = [[MSCateCollectionVC alloc]init];
+        detailVC.cateModel = [cate convertToCateModel];
+        detailVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:detailVC animated:YES];
+        
     }
 }
 

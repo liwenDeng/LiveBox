@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QMCateModel : NSObject
+@interface QMCateModel : NSObject <MSModelAdapterProtocol>
 
 @property (nonatomic, copy) NSString *slug;//根据这个来取对应的roomList
 

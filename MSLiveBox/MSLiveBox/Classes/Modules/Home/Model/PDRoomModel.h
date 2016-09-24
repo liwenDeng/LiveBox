@@ -134,7 +134,7 @@
 
 @class PDRoomSectionType;
 
-@interface PDRoomSectionModel : NSObject
+@interface PDRoomSectionModel : NSObject <MSModelAdapterProtocol>
 
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, assign) NSInteger total;

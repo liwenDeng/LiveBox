@@ -7,10 +7,11 @@
 //
 
 #import "PDRoomModel.h"
+#import "MSBaseCateModel.h"
 
 @implementation PDRoomModel
 
-- (MSRoomCellModel *)convertToUniteModel {
+- (MSRoomCellModel *)convertToCellModel {
     return [[MSRoomCellModel alloc]initWithType:(MSLivetypePanda) iconUrl:self.pictures.img title:self.name nickName:self.userinfo.nickName onlineCount:[NSString stringWithFormat:@"%@",self.person_num] gameName:self.classification.cname roomId:self.roomId ownerId:self.hostid isVertical:0];
 }
 
@@ -40,6 +41,10 @@
 
 + (NSDictionary *)mj_objectClassInArray {
     return @{@"items" : [PDRoomModel class]};
+}
+
+- (MSBaseCateModel *)convertToCateModel {
+    return [[MSBaseCateModel alloc]initWithCateId:self.type.ename title:self.type.cname thumb:self.type.icon type:(MSLivetypePanda)];
 }
 
 @end

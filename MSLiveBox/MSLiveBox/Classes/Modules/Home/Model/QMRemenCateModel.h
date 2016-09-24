@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MSBaseCateModel.h"
 
+@class QMRemenCateExt;
+
 /**
  *  圆圈 分类轮播图
  */
@@ -19,5 +21,12 @@
 @property (nonatomic, strong) NSString *thumb;
 @property (nonatomic, strong) NSString *subtitle;
 @property (nonatomic, strong) NSString *slot_id;
+@property (nonatomic, strong) QMRemenCateExt *ext;
+
+@end
+
+@interface QMRemenCateExt : NSObject
+
+@property (nonatomic, strong) NSString *classification;
 
 @end

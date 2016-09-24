@@ -19,6 +19,4 @@
 @property (nonatomic, strong) NSString *tv_pic_url; //小图
 @property (nonatomic, strong) DYRoomModel *room;
 
-- (MSBaseBannerModel *)convertToUniteModel;
-
 @end

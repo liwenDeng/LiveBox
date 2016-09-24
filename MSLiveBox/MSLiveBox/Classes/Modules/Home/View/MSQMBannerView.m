@@ -88,7 +88,7 @@ static const CGFloat kCircleCellHeight = 90.0f;
     
     NSMutableArray *urls = [NSMutableArray array];
     for (id<MSModelAdapterProtocol> cateModel in cateModels) {
-        MSBaseCateModel *model = [cateModel convertToUniteModel];
+        MSBaseCateModel *model = [cateModel convertToCateModel];
         [urls addObject:model.thumb];
     }
     self.cateCircleView.imageArray = urls;

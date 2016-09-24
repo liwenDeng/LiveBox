@@ -16,6 +16,7 @@
 #import "DYFaceRoomCell.h"
 #import "MSBaseTabBarController.h"
 #import "MSLiveSteamViewController.h"
+#import "MSCateCollectionVC.h"
 
 typedef enum : NSUInteger {
     DYSectionTypeBanner = 1,
@@ -198,7 +199,6 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
             break;
     }
     
-    
     [cell fillWithRoomModel:model atIndexPath:indexPath];
     return cell;
 }
@@ -259,7 +259,7 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
         model = roomList[indexPath.row];
     }
     MSLiveSteamViewController *liveVC = [[MSLiveSteamViewController alloc]init];
-    liveVC.roomModel = [model convertToUniteModel];
+    liveVC.roomModel = [model convertToCellModel];
     liveVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:liveVC animated:YES];
 }
@@ -291,36 +291,30 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
 
 #pragma mark - MSBaseSectionHeaderViewDelegate
 - (void)sectionHeaderView:(MSBaseSectionHeaderView *)sectionHeaderView clickedMoreButtonAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"more...");
-    if (indexPath.section == 0) {
+    if (indexPath.section == 1) {
         //跳转到直播
         MSBaseTabBarController *tabController = (MSBaseTabBarController *)[self cyl_tabBarController];
         tabController.selectedIndex = 1;
+    }else if (indexPath.section == 2) {
+        //颜值
     }else {
 //        //跳转到分类
-//        DYRoomModel *rooModel = [self getRoomModelAtIndexPath:indexPath];
-//        DYDetailLiveViewController *detailVC = [[DYDetailLiveViewController alloc]init];
-//        detailVC.title = rooModel.game_name;
-//        detailVC.cateId = [rooModel.cate_id integerValue];
-//        detailVC.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:detailVC animated:YES];
+        DYRoomCateList *list = self.sectionList[indexPath.section];
+        MSCateCollectionVC *detailVC = [[MSCateCollectionVC alloc]init];
+        detailVC.cateModel = [list convertToCateModel];
+        detailVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:detailVC animated:YES];
     }
 }
 
 #pragma mark - MSBaseBannerViewDelegate
 - (void)banner:(MSBaseBannerView *)banner clickedAtIndex:(NSInteger)index roomId:(NSString *)roomId {
-
-}
-
-#pragma mark - 旋转控制
-- (BOOL)shouldAutorotate
-{
-    return NO;
-}
-
--(UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
+    NSArray *banners = self.sectionList[0];
+    DYBannerModel *bannerModel = banners[index];
+    MSLiveSteamViewController *live = [[MSLiveSteamViewController alloc]init];
+    
+    live.roomModel = [bannerModel convertToCellModel];
+    [self.navigationController pushViewController:live animated:YES];
 }
 
 - (DYSectionType)modelTypeAtSection:(NSInteger )section {

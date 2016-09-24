@@ -63,4 +63,16 @@
     }];
     
 }
+
+- (void)testCateRoomList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getQMRoomCateListWithCateName:@"lol" success:^(NSDictionary *object) {
+            NSArray *roomList = [QMRoomPlayerModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+            XCTAssert(roomList.count > 0,@"全名分类列表中某类无数据");
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }];
+}
 @end

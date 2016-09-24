@@ -11,7 +11,7 @@
 
 @class PDRoominfo,PDHostinfo,PDVideoinfo,PDStream_Addr;
 
-@interface PDRoomPlayerModel : NSObject
+@interface PDRoomPlayerModel : NSObject <MSModelAdapterProtocol>
 
 @property (nonatomic, strong) PDRoominfo *roominfo;
 
@@ -21,7 +21,7 @@
 
 @property (nonatomic, strong) PDUserinfo *userinfo;
 
-@property (nonatomic, copy, readonly) NSString *playerUrl;
+@property (nonatomic, copy, readonly) NSString *videoUrl;
 
 @end
 @interface PDRoominfo : NSObject

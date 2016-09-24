@@ -33,14 +33,12 @@
 @property (nonatomic, copy) NSString *specific_status;
 @property (nonatomic, copy) NSString *vod_quality;
 
-- (MSRoomCellModel *)convertToUniteModel;
-
 @end
 
 /**
  *  斗鱼热门分类列表
  */
-@interface DYRoomCateList : NSObject
+@interface DYRoomCateList : NSObject <MSModelAdapterProtocol>
 
 @property (nonatomic, strong) NSArray *room_list;
 @property (nonatomic, copy) NSString *tag_name;

@@ -14,7 +14,8 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *thumb;
 @property (nonatomic, strong) NSString *subtitle;
+@property (nonatomic, assign) MSLivetype type;
 
-- initWithCateId:(NSString *)cateId title:(NSString *)title thumb:(NSString *)thumb;
+- initWithCateId:(NSString *)cateId title:(NSString *)title thumb:(NSString *)thumb type:(MSLivetype)type;
 
 @end

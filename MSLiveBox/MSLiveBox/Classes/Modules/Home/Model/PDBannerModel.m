@@ -11,7 +11,7 @@
 
 @implementation PDBannerModel
 
-- (MSBaseBannerModel *)convertToUniteModel {
+- (MSBaseBannerModel *)convertToBannerModel {
     return [[MSBaseBannerModel alloc]initWithTye:(MSLivetypeQuanMin) roomId:self.roomid title:self.title smallPic:self.smallimg bigPic:self.newimg];
 }
 

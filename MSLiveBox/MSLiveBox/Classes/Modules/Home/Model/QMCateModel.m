@@ -7,7 +7,12 @@
 //
 
 #import "QMCateModel.h"
+#import "MSBaseCateModel.h"
 
 @implementation QMCateModel
+
+- (MSBaseCateModel *)convertToCateModel {
+    return [[MSBaseCateModel alloc]initWithCateId:self.category_slug title:self.name thumb:nil type:(MSLivetypeQuanMin)];
+}
 
 @end

@@ -46,7 +46,7 @@
 
 
 - (void)fillWithRoomModel:(id<MSModelAdapterProtocol>)roomModel atIndexPath:(NSIndexPath *)indexPath {
-    MSRoomCellModel *model = [roomModel convertToUniteModel];
+    MSRoomCellModel *model = [roomModel convertToCellModel];
     self.titleLabel.text = model.nickName;
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:model.iconUrl]];
 }

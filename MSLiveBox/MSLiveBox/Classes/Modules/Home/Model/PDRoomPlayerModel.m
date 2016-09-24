@@ -13,7 +13,7 @@
 /**
  *  计算加密后的播放地址
  */
-- (NSString *)playerUrl {
+- (NSString *)videoUrl {
 //     http://pl{}.live.panda.tv/live_panda/{}.flv'.format(plflag[1],room_key
     
     NSArray * pflag = [self.videoinfo.plflag componentsSeparatedByString:@"_"];

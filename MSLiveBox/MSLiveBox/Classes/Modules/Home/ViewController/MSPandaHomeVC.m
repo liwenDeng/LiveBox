@@ -175,7 +175,11 @@ static NSString *const kSectionHeaderID = @"kPDSectionHeaderId";
 
 #pragma mark - MSBaseBannerViewDelegate
 - (void)banner:(MSBaseBannerView *)banner clickedAtIndex:(NSInteger)index roomId:(NSString *)roomId {
-    
+    PDBannerModel *bannerModel = self.bannerList[index];
+    MSLiveSteamViewController *liveVC = [[MSLiveSteamViewController alloc]init];
+    liveVC.roomModel = [bannerModel convertToCellModel];
+    liveVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:liveVC animated:YES];
 }
 
 #pragma mark - MSBaseSectionHeaderViewDelegate

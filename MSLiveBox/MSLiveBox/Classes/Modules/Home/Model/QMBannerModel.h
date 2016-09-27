@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MSModelAdapterProtocol.h"
+#import "QMRoomModel.h"
 
 @interface QMBannerModel : NSObject <MSModelAdapterProtocol>
 
@@ -32,6 +33,8 @@
 @property (nonatomic, assign) NSInteger status;
 
 @property (nonatomic, copy) NSString *fk;
+
+@property (nonatomic, strong) QMRoomModel *link_object;
 
 @end
 

@@ -12,7 +12,11 @@
 @implementation PDBannerModel
 
 - (MSBaseBannerModel *)convertToBannerModel {
-    return [[MSBaseBannerModel alloc]initWithTye:(MSLivetypeQuanMin) roomId:self.roomid title:self.title smallPic:self.smallimg bigPic:self.newimg];
+    return [[MSBaseBannerModel alloc]initWithTye:(MSLivetypePanda) roomId:self.roomid title:self.title smallPic:self.smallimg bigPic:self.newimg];
+}
+
+- (MSRoomCellModel *)convertToCellModel {
+    return [[MSRoomCellModel alloc]initWithType:(MSLivetypePanda) iconUrl:self.smallimg title:self.title nickName:self.nickname onlineCount:self.person_num gameName:nil roomId:self.roomid ownerId:self.roomid isVertical:0];
 }
 
 @end

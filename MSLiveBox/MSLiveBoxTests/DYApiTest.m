@@ -54,7 +54,7 @@
             NSArray *bannerList = [DYBannerModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
             XCTAssertTrue([bannerList[0] isMemberOfClass:[DYBannerModel class]],@"fail");
             DYBannerModel *DYmodel = bannerList[0];
-            MSBaseBannerModel *model = [DYmodel convertToUniteModel];
+            MSBaseBannerModel *model = [DYmodel convertToBannerModel];
             XCTAssertNotNil(model,@"fail");
             dispatch_group_leave(group);
         } failure:^(NSError *error) {
@@ -74,7 +74,7 @@
            NSArray *roomList = [DYRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
            XCTAssert(roomList.count > 0,@"没有数据");
            DYRoomModel *dyModel = roomList[0];
-           MSRoomCellModel *model = [dyModel convertToUniteModel];
+           MSRoomCellModel *model = [dyModel convertToCellModel];
            XCTAssertNotNil(model,@"fail");
            dispatch_group_leave(group);
        } failure:^(NSError *error) {
@@ -89,7 +89,7 @@
             NSArray *roomList = [DYRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
             XCTAssert(roomList.count > 0,@"没有数据");
             DYRoomModel *dyModel = roomList[0];
-            MSRoomCellModel *model = [dyModel convertToUniteModel];
+            MSRoomCellModel *model = [dyModel convertToCellModel];
             XCTAssertNotNil(model,@"fail");
             dispatch_group_leave(group);
         } failure:^(NSError *error) {

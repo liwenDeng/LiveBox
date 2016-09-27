@@ -19,6 +19,10 @@
     return [[MSBaseBannerModel alloc]initWithTye:(MSLivetypeQuanMin) roomId:self.room_id title:self.title smallPic:self.thumb bigPic:self.thumb];
 }
 
+- (MSRoomCellModel *)convertToCellModel {
+    return [self.link_object convertToCellModel];
+}
+
 @end
 
 

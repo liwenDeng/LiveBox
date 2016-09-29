@@ -8,10 +8,10 @@
 /**
  *  分类列表页
  */
-#import "MSHomeBaseCollectionVC.h"
+#import "MSBaseCollectionVC.h"
 #import "MSBaseCateModel.h"
 
-@interface MSCateCollectionVC : MSHomeBaseCollectionVC
+@interface MSCateCollectionVC : MSBaseCollectionVC
 
 @property (nonatomic, strong) MSBaseCateModel *cateModel;
 

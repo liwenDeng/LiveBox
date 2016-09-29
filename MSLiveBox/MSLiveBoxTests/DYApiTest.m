@@ -129,6 +129,18 @@
     }];
 }
 
+- (void)testAllLiveList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getAllDouyuLiveLimit:20 offset:0 WithSuccess:^(NSDictionary *object) {
+            NSArray *roomList = [DYRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+            XCTAssert(roomList.count > 0, @"全部直播房间数为0");
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 - (dispatch_group_t)testGroup {
     if (!_testGroup) {
         _testGroup =  dispatch_group_create();

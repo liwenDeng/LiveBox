@@ -13,7 +13,7 @@
 #import "MSLiveCollectionView.h"
 #import <MJRefresh.h>
 
-@protocol MSHomeBaseCollectionVCDelegate <NSObject>
+@protocol MSBaseCollectionVCProtocol <NSObject>
 
 @required
 /**
@@ -23,7 +23,7 @@
 
 @end
 
-@interface MSHomeBaseCollectionVC : MSBaseViewController <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,MSHomeBaseCollectionVCDelegate>
+@interface MSBaseCollectionVC : MSBaseViewController <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,MSBaseCollectionVCProtocol>
 
 @property (nonatomic, strong) MSLiveCollectionView *collectionView;
 

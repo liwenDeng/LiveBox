@@ -6,13 +6,13 @@
 //  Copyright © 2016年 dengliwen. All rights reserved.
 //
 
-#import "MSHomeBaseCollectionVC.h"
+#import "MSBaseCollectionVC.h"
 
-@interface MSHomeBaseCollectionVC ()
+@interface MSBaseCollectionVC ()
 
 @end
 
-@implementation MSHomeBaseCollectionVC
+@implementation MSBaseCollectionVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

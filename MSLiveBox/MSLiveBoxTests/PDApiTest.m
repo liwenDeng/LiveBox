@@ -80,4 +80,16 @@
     }];
 }
 
+- (void)testPDAllLiveList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getPandaAllLiveListWithPageNo:1 success:^(NSDictionary *object) {
+            NSInteger total = [object[@"data"][@"total"] integerValue];
+            NSArray *roomList = [PDRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"][@"items"]];
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 @end

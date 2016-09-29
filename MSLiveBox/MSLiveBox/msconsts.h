@@ -13,6 +13,12 @@
 #define msconsts_h
 #import <UIKit/UIKit.h>
 
+
+/**
+ 通知直播VC改变选中下标
+ */
+static NSString * const kLiveGroupVCChangeIndexNoti = @"LiveGroupViewControllerChangeSelectIndex";
+
 /**
  平台类型
  */

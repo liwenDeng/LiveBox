@@ -85,10 +85,10 @@
     }];
 }
 
-//5.所有直播房间列表
+//5.所有直播房间列表  从0开始加载
 //第一页list  http://www.quanmin.tv/json/play/list.json?0913170848
 //第二页list2 http://www.quanmin.tv/json/play/list_1.json?0919165930
-+ (NSURLSessionDataTask *)getQMAllLiveRooms:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
++ (NSURLSessionDataTask *)getQMAllLiveRoomsPageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     NSDate *date = [NSDate date];
     NSInteger month = date.ms_month;
     NSInteger day = date.ms_day;
@@ -96,8 +96,15 @@
     NSInteger minute = date.ms_minute;
     NSInteger second = date.ms_seconds;
     
+    NSString *page = @"";
+    if (pageNo == 0) {
+        page = @"";
+    }else {
+        page = [NSString stringWithFormat:@"_%ld",pageNo];
+    }
+    
     NSString *timeString = [NSString stringWithFormat:@"%02ld%02ld%02ld%02ld%02ld",month,day,hour,minute,second];
-    NSString *urlStr = [NSString stringWithFormat:@"http://www.quanmin.tv/json/play/list.json?%@",timeString];
+    NSString *urlStr = [NSString stringWithFormat:@"http://www.quanmin.tv/json/play/list%@.json?%@",page,timeString];
     ZCApiAction *action = [[ZCApiAction alloc] initWithURL:urlStr];
     [action setHttpMethod:httpGet];
     return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {

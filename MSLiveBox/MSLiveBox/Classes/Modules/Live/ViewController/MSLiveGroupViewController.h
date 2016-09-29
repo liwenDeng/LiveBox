@@ -8,6 +8,6 @@
 
 #import "MSBaseViewController.h"
 
-@interface MSLiveViewController : MSBaseViewController
+@interface MSLiveGroupViewController : MSBaseViewController
 
 @end

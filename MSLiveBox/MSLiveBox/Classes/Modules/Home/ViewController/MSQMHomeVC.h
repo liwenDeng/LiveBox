@@ -6,8 +6,8 @@
 //  Copyright © 2016年 dengliwen. All rights reserved.
 //
 
-#import "MSHomeBaseCollectionVC.h"
+#import "MSBaseCollectionVC.h"
 
-@interface MSQMHomeVC : MSHomeBaseCollectionVC
+@interface MSQMHomeVC : MSBaseCollectionVC
 
 @end

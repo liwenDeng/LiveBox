@@ -295,6 +295,10 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
         //跳转到直播
         MSBaseTabBarController *tabController = (MSBaseTabBarController *)[self cyl_tabBarController];
         tabController.selectedIndex = 1;
+        
+        //通知选中直播页面第一个
+        [[NSNotificationCenter defaultCenter]postNotificationName:kLiveGroupVCChangeIndexNoti object:nil userInfo:@{@"index":@(0)}];
+        
     }else if (indexPath.section == 2) {
         //颜值
     }else {

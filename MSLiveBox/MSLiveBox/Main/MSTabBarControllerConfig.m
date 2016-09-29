@@ -11,7 +11,7 @@
 
 #import "MSHomeViewController.h"
 #import "MSFollowViewController.h"
-#import "MSLiveViewController.h"
+#import "MSLiveGroupViewController.h"
 #import "MSMyCenterViewController.h"
 
 //#pragma mark -HideTabBarMethod
@@ -111,7 +111,7 @@
     MSBaseNavigationController *navi1 = [[MSBaseNavigationController alloc]initWithRootViewController:vc1];
     vc1.navigationItem.title = @"首页";
     
-    MSLiveViewController *vc2 = [[MSLiveViewController alloc]init];
+    MSLiveGroupViewController *vc2 = [[MSLiveGroupViewController alloc]init];
     MSBaseNavigationController *navi2 = [[MSBaseNavigationController alloc]initWithRootViewController:vc2];
     vc2.navigationItem.title = @"直播";
     

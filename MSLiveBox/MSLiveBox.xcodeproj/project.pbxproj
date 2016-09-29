@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2DF555F1E168FA5525410E2C /* libPods-MSLiveBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E08D1F21825E840DE7A08F /* libPods-MSLiveBox.a */; };
+		BC2CADFE1D9D02B400E30C45 /* MSAllLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2CADFD1D9D02B400E30C45 /* MSAllLiveViewController.m */; };
 		BC438DDC1D962430004645CA /* MSCateCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC438DDB1D962430004645CA /* MSCateCollectionVC.m */; };
 		BC51CBE81D8FDE0000775EEB /* MSNetworking+PandaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC51CBE71D8FDE0000775EEB /* MSNetworking+PandaAPI.m */; };
 		BC548DEA1D950021000C5C85 /* PDApiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC548DE91D950021000C5C85 /* PDApiTest.m */; };
@@ -80,7 +81,7 @@
 		BC89F12C1D7D52EC00F0A2B5 /* MSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F12B1D7D52EC00F0A2B5 /* MSBaseViewController.m */; };
 		BC89F12F1D7D53A900F0A2B5 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F12E1D7D53A900F0A2B5 /* MSHomeViewController.m */; };
 		BC89F1321D7D53D000F0A2B5 /* MSMyCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1311D7D53D000F0A2B5 /* MSMyCenterViewController.m */; };
-		BC89F1351D7D53F500F0A2B5 /* MSLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1341D7D53F500F0A2B5 /* MSLiveViewController.m */; };
+		BC89F1351D7D53F500F0A2B5 /* MSLiveGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1341D7D53F500F0A2B5 /* MSLiveGroupViewController.m */; };
 		BC89F1381D7D540600F0A2B5 /* MSFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1371D7D540600F0A2B5 /* MSFollowViewController.m */; };
 		BC89F13E1D7D549700F0A2B5 /* NSString+Code.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F13B1D7D549700F0A2B5 /* NSString+Code.m */; };
 		BC89F13F1D7D549700F0A2B5 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F13D1D7D549700F0A2B5 /* NSString+Util.m */; };
@@ -90,7 +91,7 @@
 		BC89F1501D7D550500F0A2B5 /* ZJScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1481D7D550500F0A2B5 /* ZJScrollPageView.m */; };
 		BC89F1511D7D550500F0A2B5 /* ZJScrollSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F14A1D7D550500F0A2B5 /* ZJScrollSegmentView.m */; };
 		BC89F1521D7D550500F0A2B5 /* ZJSegmentStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F14C1D7D550500F0A2B5 /* ZJSegmentStyle.m */; };
-		BC89F1551D7D56EA00F0A2B5 /* MSHomeBaseCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1541D7D56EA00F0A2B5 /* MSHomeBaseCollectionVC.m */; };
+		BC89F1551D7D56EA00F0A2B5 /* MSBaseCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1541D7D56EA00F0A2B5 /* MSBaseCollectionVC.m */; };
 		BC89F1581D7D574F00F0A2B5 /* MSLiveCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1571D7D574F00F0A2B5 /* MSLiveCollectionView.m */; };
 		BC89F15B1D7D5A8500F0A2B5 /* MSBaseRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F15A1D7D5A8500F0A2B5 /* MSBaseRoomCell.m */; };
 		BC89F1611D7D5F4F00F0A2B5 /* MSNetworking+DYAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC89F1601D7D5F4F00F0A2B5 /* MSNetworking+DYAPI.m */; };
@@ -126,6 +127,8 @@
 		1CC6B5193CCF8DCCDC79FDA4 /* Pods-MSLiveBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSLiveBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSLiveBoxTests/Pods-MSLiveBoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		55CDDE664BCFDF4EC4E135C0 /* Pods-MSLiveBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSLiveBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSLiveBoxUITests/Pods-MSLiveBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7A090FD0BFA4E3C2E069C57 /* libPods-MSLiveBoxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSLiveBoxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC2CADFC1D9D02B400E30C45 /* MSAllLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAllLiveViewController.h; sourceTree = "<group>"; };
+		BC2CADFD1D9D02B400E30C45 /* MSAllLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAllLiveViewController.m; sourceTree = "<group>"; };
 		BC438DDA1D962430004645CA /* MSCateCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCateCollectionVC.h; sourceTree = "<group>"; };
 		BC438DDB1D962430004645CA /* MSCateCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCateCollectionVC.m; sourceTree = "<group>"; };
 		BC51CBE61D8FDE0000775EEB /* MSNetworking+PandaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSNetworking+PandaAPI.h"; sourceTree = "<group>"; };
@@ -262,8 +265,8 @@
 		BC89F12E1D7D53A900F0A2B5 /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
 		BC89F1301D7D53D000F0A2B5 /* MSMyCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMyCenterViewController.h; sourceTree = "<group>"; };
 		BC89F1311D7D53D000F0A2B5 /* MSMyCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMyCenterViewController.m; sourceTree = "<group>"; };
-		BC89F1331D7D53F500F0A2B5 /* MSLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveViewController.h; sourceTree = "<group>"; };
-		BC89F1341D7D53F500F0A2B5 /* MSLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveViewController.m; sourceTree = "<group>"; };
+		BC89F1331D7D53F500F0A2B5 /* MSLiveGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveGroupViewController.h; sourceTree = "<group>"; };
+		BC89F1341D7D53F500F0A2B5 /* MSLiveGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveGroupViewController.m; sourceTree = "<group>"; };
 		BC89F1361D7D540600F0A2B5 /* MSFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSFollowViewController.h; sourceTree = "<group>"; };
 		BC89F1371D7D540600F0A2B5 /* MSFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFollowViewController.m; sourceTree = "<group>"; };
 		BC89F13A1D7D549700F0A2B5 /* NSString+Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Code.h"; sourceTree = "<group>"; };
@@ -282,8 +285,8 @@
 		BC89F14A1D7D550500F0A2B5 /* ZJScrollSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJScrollSegmentView.m; sourceTree = "<group>"; };
 		BC89F14B1D7D550500F0A2B5 /* ZJSegmentStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJSegmentStyle.h; sourceTree = "<group>"; };
 		BC89F14C1D7D550500F0A2B5 /* ZJSegmentStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJSegmentStyle.m; sourceTree = "<group>"; };
-		BC89F1531D7D56EA00F0A2B5 /* MSHomeBaseCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeBaseCollectionVC.h; sourceTree = "<group>"; };
-		BC89F1541D7D56EA00F0A2B5 /* MSHomeBaseCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeBaseCollectionVC.m; sourceTree = "<group>"; };
+		BC89F1531D7D56EA00F0A2B5 /* MSBaseCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseCollectionVC.h; sourceTree = "<group>"; };
+		BC89F1541D7D56EA00F0A2B5 /* MSBaseCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseCollectionVC.m; sourceTree = "<group>"; };
 		BC89F1561D7D574F00F0A2B5 /* MSLiveCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveCollectionView.h; sourceTree = "<group>"; };
 		BC89F1571D7D574F00F0A2B5 /* MSLiveCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveCollectionView.m; sourceTree = "<group>"; };
 		BC89F1591D7D5A8500F0A2B5 /* MSBaseRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseRoomCell.h; sourceTree = "<group>"; };
@@ -646,8 +649,8 @@
 				BC89F1281D7D52B400F0A2B5 /* MSBaseNavigationController.m */,
 				BC89F12A1D7D52EC00F0A2B5 /* MSBaseViewController.h */,
 				BC89F12B1D7D52EC00F0A2B5 /* MSBaseViewController.m */,
-				BC89F1531D7D56EA00F0A2B5 /* MSHomeBaseCollectionVC.h */,
-				BC89F1541D7D56EA00F0A2B5 /* MSHomeBaseCollectionVC.m */,
+				BC89F1531D7D56EA00F0A2B5 /* MSBaseCollectionVC.h */,
+				BC89F1541D7D56EA00F0A2B5 /* MSBaseCollectionVC.m */,
 				BC6A37031D7EB23F009639C9 /* MSLiveSteamViewController.h */,
 				BC6A37041D7EB23F009639C9 /* MSLiveSteamViewController.m */,
 			);
@@ -754,8 +757,10 @@
 		BC89F0E51D7D509400F0A2B5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BC89F1331D7D53F500F0A2B5 /* MSLiveViewController.h */,
-				BC89F1341D7D53F500F0A2B5 /* MSLiveViewController.m */,
+				BC89F1331D7D53F500F0A2B5 /* MSLiveGroupViewController.h */,
+				BC89F1341D7D53F500F0A2B5 /* MSLiveGroupViewController.m */,
+				BC2CADFC1D9D02B400E30C45 /* MSAllLiveViewController.h */,
+				BC2CADFD1D9D02B400E30C45 /* MSAllLiveViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1213,7 +1218,7 @@
 				BC89F0A61D7D47F700F0A2B5 /* AppDelegate.m in Sources */,
 				BC6A37161D7EBE75009639C9 /* NSDate+MSExtension.m in Sources */,
 				BC9A811D1D82621E005A98C7 /* QMRemenCateModel.m in Sources */,
-				BC89F1551D7D56EA00F0A2B5 /* MSHomeBaseCollectionVC.m in Sources */,
+				BC89F1551D7D56EA00F0A2B5 /* MSBaseCollectionVC.m in Sources */,
 				BC89F1511D7D550500F0A2B5 /* ZJScrollSegmentView.m in Sources */,
 				BC89F1131D7D517000F0A2B5 /* CYLTabBarController.m in Sources */,
 				BC89F1651D7D630D00F0A2B5 /* MSDYHomeVC.m in Sources */,
@@ -1238,7 +1243,8 @@
 				BC89F13F1D7D549700F0A2B5 /* NSString+Util.m in Sources */,
 				BC89F11B1D7D517000F0A2B5 /* ZCApiUploadAction.m in Sources */,
 				BC51CBE81D8FDE0000775EEB /* MSNetworking+PandaAPI.m in Sources */,
-				BC89F1351D7D53F500F0A2B5 /* MSLiveViewController.m in Sources */,
+				BC2CADFE1D9D02B400E30C45 /* MSAllLiveViewController.m in Sources */,
+				BC89F1351D7D53F500F0A2B5 /* MSLiveGroupViewController.m in Sources */,
 				BC9A811A1D826035005A98C7 /* MSBaseCateModel.m in Sources */,
 				BC89F1161D7D517000F0A2B5 /* MSCircleBaseCell.m in Sources */,
 				BC89F1521D7D550500F0A2B5 /* ZJSegmentStyle.m in Sources */,

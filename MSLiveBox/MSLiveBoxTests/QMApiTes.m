@@ -75,4 +75,22 @@
         }];
     }];
 }
+
+- (void)testAllLiveRoomList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getQMAllLiveRoomsPageNo:1 success:^(NSDictionary *object) {
+            
+            NSInteger total = [object[@"total"] integerValue]; //总共数据
+            NSInteger page = [object[@"page"] integerValue]; //当前页码 
+            NSInteger pageCount = [object[@"pageCount"] integerValue]; //总页数
+            NSInteger size = [object[@"size"] integerValue];    //一页数量
+            NSArray *roomList = [QMRoomPlayerModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+            
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            dispatch_group_leave(group);
+        }];
+    }];
+}
 @end

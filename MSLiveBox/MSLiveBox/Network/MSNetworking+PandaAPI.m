@@ -54,7 +54,7 @@
 + (NSURLSessionDataTask *)getPandaAllLiveListWithPageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     //http://api.m.panda.tv/ajax_live_lists?pageno=2&pagenum=10&order=person_num&status=2&__version=1.1.7.1305&__plat=ios&__channel=appstore
     
-    NSString *urlStr = [NSString stringWithFormat:@"http://api.m.panda.tv/ajax_live_lists?pageno=%ld&pagenum=10&order=person_num&status=2&__version=1.1.7.1305&__plat=ios&__channel=appstore",pageNo];
+    NSString *urlStr = [NSString stringWithFormat:@"http://api.m.panda.tv/ajax_live_lists?pageno=%ld&pagenum=20&order=person_num&status=2&__version=1.1.7.1305&__plat=ios&__channel=appstore",pageNo];
     ZCApiAction *action = [[ZCApiAction alloc] initWithURL:urlStr];
     [action setHttpMethod:httpGet];
     return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {

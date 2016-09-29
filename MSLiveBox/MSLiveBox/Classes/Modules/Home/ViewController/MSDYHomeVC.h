@@ -6,10 +6,10 @@
 //  Copyright © 2016年 dengliwen. All rights reserved.
 //
 
-#import "MSHomeBaseCollectionVC.h"
+#import "MSBaseCollectionVC.h"
 /**
  *  斗鱼
  */
-@interface MSDYHomeVC : MSHomeBaseCollectionVC
+@interface MSDYHomeVC : MSBaseCollectionVC
 
 @end

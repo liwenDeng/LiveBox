@@ -102,15 +102,12 @@
 #pragma mark - 所有直播
 + (NSURLSessionDataTask *)getAllDouyuLiveLimit:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure{
     
-    //第一次 http://capi.douyucdn.cn/api/v1/live?limit=20&client_sys=ios&offset=0
-    //上拉一次 http://capi.douyucdn.cn/api/v1/live?limit=20&client_sys=ios&offset=20
-    //上拉2次 http://capi.douyucdn.cn/api/v1/live?limit=20&client_sys=ios&offset=40
-    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/live"];
+    //http://capi.douyucdn.cn/api/v1/getColumnRoom/9?limit=20&client_sys=ios&offset=0
+    //http://capi.douyucdn.cn/api/v1/getColumnRoom/9?limit=20&client_sys=ios&offset=20
     
-    action.params[@"limit"] = @(limit);
-    action.params[@"offset"] = @(offset);
-    
-    
+    NSString *urlStr = [NSString stringWithFormat:@"http://capi.douyucdn.cn/api/v1/getColumnRoom/9?limit=%ld&client_sys=ios&offset=%ld",limit,offset];
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:urlStr];
+
     //可选属性
     //    action.showLog = YES;
     //    action.actionWillInvokeBlock = ^{

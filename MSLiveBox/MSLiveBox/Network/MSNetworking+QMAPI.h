@@ -34,6 +34,6 @@
 /**
  *  5.全民所有直播房间列表
  */
-+ (NSURLSessionDataTask *)getQMAllLiveRooms:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
++ (NSURLSessionDataTask *)getQMAllLiveRoomsPageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 @end

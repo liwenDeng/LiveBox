@@ -1,15 +1,14 @@
 //
-//  MSCateCollectionVC.m
+//  MSAllLiveViewController.m
 //  MSLiveBox
 //
-//  Created by dengliwen on 16/9/24.
+//  Created by dengliwen on 16/9/29.
 //  Copyright © 2016年 dengliwen. All rights reserved.
 //
 
-#import "MSCateCollectionVC.h"
-#import "MSBaseRoomCell.h"
+#import "MSAllLiveViewController.h"
 #import "MSLiveSteamViewController.h"
-
+#import "MSBaseRoomCell.h"
 #import "MSNetworking+DYAPI.h"
 #import "MSNetworking+QMAPI.h"
 #import "MSNetworking+PandaAPI.h"
@@ -19,22 +18,32 @@
 #import "QMRoomPlayerModel.h"
 #import "PDRoomModel.h"
 
-
 static NSString *const kNormalRoomCellID = @"kNormalRoomCell";
 
-@interface MSCateCollectionVC ()
+@interface MSAllLiveViewController ()
 
+@property (nonatomic, assign) MSLivetype liveType;
 @property (nonatomic, strong) NSMutableArray *roomList;
 @property (nonatomic, assign) NSInteger pageNo; //页码
 @property (nonatomic, assign) NSInteger totalPage;
 @property (nonatomic, assign) NSInteger totalCount;
 
+
 @end
 
-@implementation MSCateCollectionVC
+@implementation MSAllLiveViewController
+
+- (instancetype)initWithLiveType:(MSLivetype)type {
+    if (self = [super init]) {
+        self.liveType = type;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
     self.roomList = [NSMutableArray array];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(0);
@@ -42,20 +51,24 @@ static NSString *const kNormalRoomCellID = @"kNormalRoomCell";
         make.left.mas_equalTo(0);
         make.width.mas_equalTo(kSCREEN_WIDTH);
     }];
-    self.title = self.cateModel.title;
     [self refresh];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - MSHomeBaseCollectionVCDelegate
 - (void)registCellClass {
     [self.collectionView registerClass:[MSBaseRoomCell class] forCellWithReuseIdentifier:kNormalRoomCellID];
-
+    
 }
 
 #pragma mark - MSHTTPRequestProtocol
 - (void)refresh {
-    MSLivetype type = self.cateModel.type;
-//    [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+    MSLivetype type = self.liveType;
+    
     self.collectionView.mj_footer.hidden = YES;
     dispatch_group_t group = dispatch_group_create();
     
@@ -64,7 +77,7 @@ static NSString *const kNormalRoomCellID = @"kNormalRoomCell";
         case MSLivetypeDouYu:
         {
             self.pageNo = 0;
-            [MSNetworking getDouyuLiveCateId:[self.cateModel.cateId integerValue] limit:20 offset:0 WithSuccess:^(NSDictionary *object) {
+            [MSNetworking getAllDouyuLiveLimit:20 offset:0 WithSuccess:^(NSDictionary *object) {
                 self.roomList = [DYRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
                 [self.collectionView.mj_header endRefreshing];
                 [self.collectionView reloadData];
@@ -77,61 +90,66 @@ static NSString *const kNormalRoomCellID = @"kNormalRoomCell";
                 dispatch_group_leave(group);
             }];
         }
-            break;
+        break;
         case MSLivetypeQuanMin:
         {
-            [self.collectionView.mj_footer endRefreshingWithNoMoreData];
-            [MSNetworking getQMRoomCateListWithCateName:self.cateModel.cateId success:^(NSDictionary *object) {
+            self.pageNo = 0;
+            [MSNetworking getQMAllLiveRoomsPageNo:0 success:^(NSDictionary *object) {
+                NSInteger pageCount = [object[@"pageCount"] integerValue]; //总页数
+                self.totalPage = pageCount;
                 NSArray *roomList = [QMRoomPlayerModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
                 self.roomList = [NSMutableArray arrayWithArray:roomList];
-                [self.collectionView.mj_header endRefreshing];
                 [self.collectionView reloadData];
+                [self.collectionView.mj_header endRefreshing];
                 
                 dispatch_group_leave(group);
             } failure:^(NSError *error) {
                 [self.collectionView.mj_header endRefreshing];
                 [self.collectionView reloadData];
-                
                 dispatch_group_leave(group);
             }];
         }
-            break;
+        break;
         case MSLivetypePanda:
         {
             self.pageNo = 1;
-            [MSNetworking getPandaAllLiveListWithCateId:self.cateModel.cateId pageNo:1 success:^(NSDictionary *object) {
+            [MSNetworking getPandaAllLiveListWithPageNo:1 success:^(NSDictionary *object) {
+                NSInteger total = [object[@"data"][@"total"] integerValue];
+                self.totalCount = total;
                 NSArray *roomList = [PDRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"][@"items"]];
                 self.roomList = [NSMutableArray arrayWithArray:roomList];
-                [self.collectionView.mj_header endRefreshing];
                 [self.collectionView reloadData];
-                
+                [self.collectionView.mj_header endRefreshing];
+                if (roomList.count >= total) {
+                    [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+                }
+                [self.collectionView reloadData];
                 dispatch_group_leave(group);
             } failure:^(NSError *error) {
-                [self.collectionView.mj_header endRefreshing];
-                [self.collectionView reloadData];
-                
+                 [self.collectionView.mj_header endRefreshing];
                 dispatch_group_leave(group);
             }];
         }
-            break;
+        break;
         default:
+        {
             dispatch_group_leave(group);
-            break;
+        }
+        break;
     }
     
-    //refresh 完成 后才显示footer
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         self.collectionView.mj_footer.hidden = NO;
     });
 }
 
 - (void)loadMore {
-    MSLivetype type = self.cateModel.type;
+    MSLivetype type = self.liveType;
     switch (type) {
         case MSLivetypeDouYu:
         {
             self.pageNo++;
-            [MSNetworking getDouyuLiveCateId:[self.cateModel.cateId integerValue] limit:20 offset:self.roomList.count WithSuccess:^(NSDictionary *object) {
+            [MSNetworking getAllDouyuLiveLimit:20 offset:self.roomList.count WithSuccess:^(NSDictionary *object) {
                 NSArray *arr = [DYRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
                 [self.roomList addObjectsFromArray:arr];
                 [self.collectionView.mj_footer endRefreshing];
@@ -146,32 +164,48 @@ static NSString *const kNormalRoomCellID = @"kNormalRoomCell";
                 [self.collectionView reloadData];
             }];
         }
-            break;
+        break;
         case MSLivetypeQuanMin:
         {
-            
+            self.pageNo++;
+            [MSNetworking getQMAllLiveRoomsPageNo:self.pageNo success:^(NSDictionary *object) {
+                NSInteger total = [object[@"total"] integerValue]; //总共数据
+                NSInteger pageCount = [object[@"pageCount"] integerValue]; //总页数
+
+                NSArray *roomList = [QMRoomPlayerModel mj_objectArrayWithKeyValuesArray:object[@"data"]];
+                
+                [self.roomList addObjectsFromArray:roomList];
+                [self.collectionView reloadData];
+                [self.collectionView.mj_footer endRefreshing];
+                if (self.pageNo >= pageCount || self.roomList.count >= total) {
+                    //没有数据了
+                    [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+                }
+            } failure:^(NSError *error) {
+                [self.collectionView.mj_footer endRefreshing];
+            }];
         }
-            break;
+        break;
         case MSLivetypePanda:
         {
             self.pageNo++;
-            [MSNetworking getPandaAllLiveListWithCateId:self.cateModel.cateId pageNo:self.pageNo success:^(NSDictionary *object) {
+            [MSNetworking getPandaAllLiveListWithPageNo:self.pageNo success:^(NSDictionary *object) {
+                NSInteger total = [object[@"data"][@"total"] integerValue];
+                self.totalCount = total;
                 NSArray *roomList = [PDRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"][@"items"]];
-                self.totalCount = [object[@"data"][@"total"] integerValue];
                 [self.roomList addObjectsFromArray:roomList];
                 [self.collectionView.mj_footer endRefreshing];
-                if (self.totalCount <= self.roomList.count) {
+                if (roomList.count >= total) {
                     [self.collectionView.mj_footer endRefreshingWithNoMoreData];
                 }
                 [self.collectionView reloadData];
             } failure:^(NSError *error) {
                 [self.collectionView.mj_footer endRefreshing];
-                [self.collectionView reloadData];
             }];
         }
-            break;
+        break;
         default:
-            break;
+        break;
     }
 }
 
@@ -209,6 +243,5 @@ static NSString *const kNormalRoomCellID = @"kNormalRoomCell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return [MSBaseRoomCell cellSize];
 }
-
 
 @end

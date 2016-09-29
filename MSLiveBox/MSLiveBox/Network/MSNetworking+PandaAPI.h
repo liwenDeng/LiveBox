@@ -27,6 +27,7 @@
 
 /**
  *  4.熊猫全部直播列表
+ *  从1 开始
  */
 + (NSURLSessionDataTask *)getPandaAllLiveListWithPageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 

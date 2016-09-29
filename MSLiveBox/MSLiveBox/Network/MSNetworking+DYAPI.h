@@ -45,6 +45,8 @@
 #pragma mark - 所有直播
 /**
  获取斗鱼当前全部直播
+ *  @param limit 一次获取多少条数据
+ *  @param offset 从第几条数据开始获取
  */
 + (NSURLSessionDataTask *)getAllDouyuLiveLimit:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 

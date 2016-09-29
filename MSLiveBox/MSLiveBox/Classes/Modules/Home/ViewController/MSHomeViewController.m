@@ -14,6 +14,8 @@
 
 @interface MSHomeViewController ()
 
+@property (nonatomic, strong) ZJScrollPageView* pageView;
+
 @end
 
 @implementation MSHomeViewController
@@ -42,15 +44,15 @@
     // 设置子控制器 --- 注意子控制器需要设置title, 将用于对应的tag显示title
     NSArray *childVcs = [NSArray arrayWithArray:[self setupChildVcAndTitle]];
     // 初始化
-    ZJScrollPageView *scrollPageView = [[ZJScrollPageView alloc] initWithFrame:CGRectMake(0, 64.0, self.view.bounds.size.width, self.view.bounds.size.height - 64.0) segmentStyle:style childVcs:childVcs parentViewController:self];
+    self.pageView = [[ZJScrollPageView alloc] initWithFrame:CGRectMake(0, 64.0, self.view.bounds.size.width, self.view.bounds.size.height - 64.0) segmentStyle:style childVcs:childVcs parentViewController:self];
     // 额外的按钮响应的block
     __weak typeof(self) weakSelf = self;
-    scrollPageView.extraBtnOnClick = ^(UIButton *extraBtn){
+    self.pageView.extraBtnOnClick = ^(UIButton *extraBtn){
         weakSelf.title = @"点击了extraBtn";
         NSLog(@"点击了extraBtn");
         
     };
-    [self.view addSubview:scrollPageView];
+    [self.view addSubview:self.pageView];
 
 }
 

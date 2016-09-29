@@ -20,7 +20,7 @@ static NSString *const kBannerCellID = @"kPDBannerCell";
 static NSString *const kNormalRoomCellID = @"kPDNormalRoomCell";
 static NSString *const kSectionHeaderID = @"kPDSectionHeaderId";
 
-@interface MSPandaHomeVC () <MSHomeBaseCollectionVCDelegate,MSBaseBannerViewDelegate,MSBaseSectionHeaderViewDelegate>
+@interface MSPandaHomeVC () <MSBaseCollectionVCProtocol,MSBaseBannerViewDelegate,MSBaseSectionHeaderViewDelegate>
 
 @property (nonatomic, strong) NSArray *bannerList;
 @property (nonatomic, strong) NSArray *sectionList;

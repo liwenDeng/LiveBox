@@ -141,6 +141,20 @@
     }];
 }
 
+- (void)testSearchRoomWithKeyword {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getDouyuRoomListWithKeyword:@"微笑" limit:20 offset:0 success:^(NSDictionary *object) {
+            NSArray *roomList = [DYRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"][@"room"]];
+            XCTAssert(roomList.count > 0, @"搜索直播房间数为0");
+
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 - (dispatch_group_t)testGroup {
     if (!_testGroup) {
         _testGroup =  dispatch_group_create();

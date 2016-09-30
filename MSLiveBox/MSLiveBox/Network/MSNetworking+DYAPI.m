@@ -7,6 +7,7 @@
 //
 
 #import "MSNetworking+DYAPI.h"
+#import "NSString+Code.h"
 
 @implementation MSNetworking (DYAPI)
 
@@ -130,5 +131,30 @@
     }];
 }
 
+#pragma mark - 搜索
++ (NSURLSessionDataTask *)getDouyuRoomListWithKeyword:(NSString *)keyword limit:(NSInteger)limit offset:(NSInteger)offset success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    //http://capi.douyucdn.cn/api/v1/searchNew/%E5%BE%AE%E7%AC%91/1?limit=20&client_sys=ios&offset=0 搜：微笑
+    NSString *urlStr = [NSString stringWithFormat:@"http://capi.douyucdn.cn/api/v1/searchNew/%@/1?limit=%ld&client_sys=ios&offset=%ld",[keyword ms_urlEncode] ,limit,offset];
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:urlStr];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
++ (NSURLSessionDataTask *)getDouyuRoomListRoomId:(NSString *)roomId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    //http://capi.douyucdn.cn/api/v1/room/2333?aid=ios&client_sys=ios&ne=1&support_pwd=1&time=1475206140&auth=39cb6cd5e383ff9f976b7d32acb1ec6b 2333
+    NSTimeInterval time = [[NSDate date]timeIntervalSince1970];
+    NSString *urlStr = [NSString stringWithFormat:@"http://capi.douyucdn.cn/api/v1/room/%@?aid=ios&client_sys=ios&ne=1&support_pwd=1&time=%f",roomId,time];
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:urlStr];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 
 @end

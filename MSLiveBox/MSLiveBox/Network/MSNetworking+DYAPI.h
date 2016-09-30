@@ -50,4 +50,16 @@
  */
 + (NSURLSessionDataTask *)getAllDouyuLiveLimit:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+#pragma mark - 搜索
+/**
+ 通过关键字搜索 （如果关键字是数字，还会调用搜索roomId的方法）
+
+ @param keyword 关键字
+ @param limit   一页数量
+ @param offset  偏移量（从第几个开始）
+ */
++ (NSURLSessionDataTask *)getDouyuRoomListWithKeyword:(NSString *)keyword limit:(NSInteger)limit offset:(NSInteger)offset success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
++ (NSURLSessionDataTask *)getDouyuRoomListRoomId:(NSString *)roomId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
 @end

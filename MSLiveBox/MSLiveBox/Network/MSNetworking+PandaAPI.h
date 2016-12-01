@@ -37,4 +37,10 @@
  */
 + (NSURLSessionDataTask *)getPandaAllLiveListWithCateId:(NSString*)cateId pageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+#pragma mark - 分类
+/**
+ 分类列表
+ */
++ (NSURLSessionDataTask *)getPandaCommonCates:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
 @end

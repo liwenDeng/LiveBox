@@ -51,5 +51,8 @@
 
 @implementation PDRoomSectionType
 
+- (MSBaseCateModel *)convertToCateModel {
+    return [[MSBaseCateModel alloc]initWithCateId:self.ename title:self.cname thumb:self.img type:(MSLivetypePanda)];
+}
 
 @end

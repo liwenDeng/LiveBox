@@ -12,6 +12,7 @@
 #import "QMCateModel.h"
 #import "QMRoomModel.h"
 #import "QMRoomPlayerModel.h"
+#import "QMCommonCate.h"
 
 @implementation QMApiTes
 
@@ -93,4 +94,18 @@
         }];
     }];
 }
+
+- (void)testQMCommonCateList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getQMCommonCates:^(NSDictionary *object) {
+            NSArray *cateList = [QMCommonCate mj_objectArrayWithKeyValuesArray:object];
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            dispatch_group_leave(group);
+        }];
+    }];
+
+}
+
 @end

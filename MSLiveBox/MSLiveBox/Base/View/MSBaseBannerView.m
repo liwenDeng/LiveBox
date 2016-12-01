@@ -100,7 +100,7 @@
     self.circleView.imageArray = urls;
     
     self.pageControl.numberOfPages = urls.count;
-    __weak typeof (self)weakSelf = self;
+    __weak __typeof(self) weakSelf = self;
     [self.circleView addPageScrollBlock:^(NSInteger index) {
         weakSelf.pageControl.currentPage = index;
     }];

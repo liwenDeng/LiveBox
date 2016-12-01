@@ -77,4 +77,19 @@
     }];
 }
 
+#pragma mark - 分类
+/**
+ 分类列表
+ */
++ (NSURLSessionDataTask *)getPandaCommonCates:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    NSInteger time = (NSInteger)[[NSDate date] timeIntervalSince1970];
+    NSString *url = [NSString stringWithFormat:@"http://api.m.panda.tv/index.php?method=category.list&type=game&__version=2.0.3.1352&__plat=ios&__channel=appstore&pt_sign=a517c33885c484635d4858d1aeaba38a&pt_time=%ld",(long)time];
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:url];
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 @end

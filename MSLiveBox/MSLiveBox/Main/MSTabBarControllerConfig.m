@@ -115,9 +115,9 @@
     MSBaseNavigationController *navi2 = [[MSBaseNavigationController alloc]initWithRootViewController:vc2];
     vc2.navigationItem.title = @"直播";
     
-    UIViewController *vc3 = [[UIViewController alloc]init];
+    MSFollowViewController *vc3 = [[MSFollowViewController alloc]init];
     MSBaseNavigationController *navi3 = [[MSBaseNavigationController alloc]initWithRootViewController:vc3];
-    vc3.navigationItem.title = @"首页2";
+    vc3.navigationItem.title = @"搜索";
     
     MSMyCenterViewController *vc4 = [[MSMyCenterViewController alloc]init];
     MSBaseNavigationController *navi4 = [[MSBaseNavigationController alloc]initWithRootViewController:vc4];
@@ -142,7 +142,7 @@
                                                   CYLTabBarItemSelectedImage : @"mycity_highlight",
                                                   };
     NSDictionary *thirdTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"消息",
+                                                 CYLTabBarItemTitle : @"搜索",
                                                  CYLTabBarItemImage : @"message_normal",
                                                  CYLTabBarItemSelectedImage : @"message_highlight",
                                                  };

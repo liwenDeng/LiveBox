@@ -20,4 +20,5 @@ typedef void(^ExtraBtnOnClick)(UIButton *extraBtn);
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
 /**  给外界重新设置视图内容的标题的方法 */
 - (void)reloadChildVcsWithNewChildVcs:(NSArray *)newChildVcs;
+
 @end

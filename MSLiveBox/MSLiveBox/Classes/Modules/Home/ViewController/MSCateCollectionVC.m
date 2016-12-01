@@ -19,7 +19,6 @@
 #import "QMRoomPlayerModel.h"
 #import "PDRoomModel.h"
 
-
 static NSString *const kNormalRoomCellID = @"kNormalRoomCell";
 
 @interface MSCateCollectionVC ()

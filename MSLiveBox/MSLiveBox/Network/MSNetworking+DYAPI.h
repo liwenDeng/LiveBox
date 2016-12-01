@@ -62,4 +62,11 @@
 
 + (NSURLSessionDataTask *)getDouyuRoomListRoomId:(NSString *)roomId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+
+#pragma mark - 分类
+/**
+ 分类列表
+ */
++ (NSURLSessionDataTask *)getDouyuCommonCates:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
 @end

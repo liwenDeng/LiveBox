@@ -43,7 +43,6 @@
 }
 
 #pragma mark - 斗鱼API
-
 + (NSURLSessionDataTask *)getDouyuColumnList:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/getColumnList"];
     //可选属性

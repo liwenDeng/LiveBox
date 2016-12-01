@@ -267,12 +267,35 @@ static NSString *const kSectionHeaderID = @"kSectionHeaderId";
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     DYSectionType type = [self modelTypeAtSection:section];
+//    switch (type) {
+//        case DYSectionTypeBanner:
+//            return [MSBaseBannerView sectionHeaderViewSize];
+//            break;
+//        default:
+//            return [MSBaseSectionHeaderView sectionHeaderViewSize];
+//            break;
+//    }
+    
     switch (type) {
         case DYSectionTypeBanner:
             return [MSBaseBannerView sectionHeaderViewSize];
             break;
-        default:
+        case DYSectionTypeHot:
             return [MSBaseSectionHeaderView sectionHeaderViewSize];
+            break;
+        case DYSectionTypeFace:
+            return [MSBaseSectionHeaderView sectionHeaderViewSize];
+            break;
+        case DYSectionTypeCate:
+        {
+            DYRoomCateList *cateList = self.sectionList[section];
+            if (cateList.room_list.count > 0) {
+                return [MSBaseSectionHeaderView sectionHeaderViewSize];
+            }
+            return CGSizeZero;
+        }
+        default:
+            return CGSizeZero;
             break;
     }
 }

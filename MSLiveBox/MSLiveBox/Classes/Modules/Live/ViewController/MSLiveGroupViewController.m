@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"首页";
+    self.title = @"直播";
     //必要的设置, 如果没有设置可能导致内容显示不正常
     self.automaticallyAdjustsScrollViewInsets = NO;
     

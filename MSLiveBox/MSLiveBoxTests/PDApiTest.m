@@ -92,4 +92,16 @@
     }];
 }
 
+- (void)testPDCommonCateList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getPandaCommonCates:^(NSDictionary *object) {
+            NSArray *cateList = [PDRoomSectionType mj_objectArrayWithKeyValuesArray:object[@"data"]];
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 @end

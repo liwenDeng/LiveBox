@@ -142,10 +142,12 @@
 
 @end
 
-@interface PDRoomSectionType : NSObject
+@interface PDRoomSectionType : NSObject <MSModelAdapterProtocol>
 
 @property (nonatomic, copy) NSString *ename;    //hot
 @property (nonatomic, copy) NSString *cname;    //热门
 @property (nonatomic, copy) NSString *icon;
+
+@property (nonatomic, copy) NSString *img;      //for commoncate
 
 @end

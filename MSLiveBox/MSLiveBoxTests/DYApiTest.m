@@ -155,6 +155,19 @@
     }];
 }
 
+- (void)testCommonCateList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking getDouyuCommonCates:^(NSDictionary *object) {
+            NSArray *list = [DYRoomCateList mj_objectArrayWithKeyValuesArray:object[@"data"]];
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            NSLog(@"failure");
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 - (dispatch_group_t)testGroup {
     if (!_testGroup) {
         _testGroup =  dispatch_group_create();

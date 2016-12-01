@@ -36,4 +36,10 @@
  */
 + (NSURLSessionDataTask *)getQMAllLiveRoomsPageNo:(NSInteger)pageNo success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+#pragma mark - 分类
+/**
+ 分类列表
+ */
++ (NSURLSessionDataTask *)getQMCommonCates:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
 @end

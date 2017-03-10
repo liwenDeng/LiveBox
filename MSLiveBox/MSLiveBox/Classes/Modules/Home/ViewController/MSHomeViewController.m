@@ -12,7 +12,7 @@
 #import "MSQMHomeVC.h"
 #import "MSPandaHomeVC.h"
 
-@interface MSHomeViewController ()
+@interface MSHomeViewController () <MSSearchButtonProtocol>
 
 @property (nonatomic, strong) ZJScrollPageView* pageView;
 
@@ -29,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"首页";
+    
     //必要的设置, 如果没有设置可能导致内容显示不正常
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -75,14 +76,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+#pragma mark - MSSearchButtonProtocol
+//- (void)searchButtonClicked {
+//    NSLog(@"search:");
+//}
 
 @end

@@ -164,12 +164,28 @@
     
     
 //    [[AFHTTPSessionManager manager].requestSerializer setValue:user_agent forHTTPHeaderField:@"User-Agent"];
-    return [[AFHTTPSessionManager manager]POST:lap_requestUrl parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    return [manager POST:lap_requestUrl parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error");
     }];
 
+//    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:lap_requestUrl];
+//    action.params[@"cdn"] = @"ws";
+//    action.params[@"rate"] = @"0";
+//    action.params[@"tt"] = [NSString stringWithFormat:@"%ld",ts];
+//    action.params[@"did"] = did;
+//    action.params[@"sign"] = l_sign;
+//    
+//    
+//    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+//        success(object);
+//    } failure:^(NSError *error) {
+//        failure(error);
+//    }];
     
     /**
      获取video 的地址 id = dy-video-player

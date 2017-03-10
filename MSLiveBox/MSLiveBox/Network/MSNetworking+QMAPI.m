@@ -135,5 +135,24 @@
     }];
 }
 
++ (NSURLSessionDataTask *)qm_searchRoomListKeyword:(NSString *)keyword pageNo:(NSInteger)pageNo isLive:(BOOL)isLive success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+//    http://www.quanmin.tv/site/search?197&m=site.search&os=2&p%5BcategoryId%5D=0&p%5Bkey%5D=%E5%B0%8F%E6%99%BA&p%5Bpage%5D=1&p%5Bsize%5D=30&v=2.1.1
+    
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://www.quanmin.tv/site/search?197"];
+    [action setHttpMethod:HttpPost];
+    action.params[@"m"] = @"site.search";
+    action.params[@"os"] = @"2";
+    action.params[@"p[categoryId]"] = @"0";
+    action.params[@"p[key]"] = keyword;
+    action.params[@"p[page]"] = @(pageNo);
+    action.params[@"p[size]"] = @(30);
+    action.params[@"v"] = @"2.1.1";
+
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 
 @end

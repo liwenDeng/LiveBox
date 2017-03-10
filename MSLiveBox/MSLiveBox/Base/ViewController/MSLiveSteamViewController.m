@@ -71,7 +71,7 @@
                 NSLog(@"video src:%@",src);
                 [self.playerView playWithVideoSrc:src];
             } failure:^(NSError *error) {
-                
+                NSLog(@"error：%@",error);
             }];
         }
             break;

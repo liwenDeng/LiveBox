@@ -108,4 +108,16 @@
 
 }
 
+- (void)testSearchList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking qm_searchRoomListKeyword:@"小智" pageNo:1 isLive:YES success:^(NSDictionary *object) {
+            NSArray *cateList = [QMRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"][@"items"]];
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 @end

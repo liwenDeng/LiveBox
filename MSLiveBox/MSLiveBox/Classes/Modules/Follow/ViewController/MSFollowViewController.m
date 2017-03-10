@@ -22,13 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UISearchBar *searchBar = [[UISearchBar alloc]init];
-    [searchBar sizeToFit];
-    searchBar.delegate = self;
-    self.searchBar = searchBar;
-    self.navigationItem.titleView = searchBar;
-    
-    self.title = @"搜索";
+
+    self.title = @"分类";
     //必要的设置, 如果没有设置可能导致内容显示不正常
     self.automaticallyAdjustsScrollViewInsets = NO;
     

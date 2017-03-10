@@ -42,4 +42,8 @@
  */
 + (NSURLSessionDataTask *)getQMCommonCates:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+#pragma mark - 搜搜
++ (NSURLSessionDataTask *)qm_searchRoomListKeyword:(NSString *)keyword pageNo:(NSInteger)pageNo isLive:(BOOL)isLive success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+
 @end

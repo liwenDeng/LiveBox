@@ -13,7 +13,7 @@
 
 @interface MSBaseSectionHeaderView ()
 
-@property (nonatomic, strong) UIImageView *iconView;
+//@property (nonatomic, strong) UIImageView *iconView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *arrowBtn;
 @property (nonatomic, strong) NSIndexPath *indexPath;
@@ -45,17 +45,17 @@
         view;
     });
     
-    _iconView = ({
-        UIImageView *view = [[UIImageView alloc]init];
-        [self addSubview:view];
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(10);
-            make.top.equalTo(lineView.mas_bottom).offset(5);
-            make.size.mas_equalTo(CGSizeMake(25, 25));
-        }];
-//        view.backgroundColor = [UIColor redColor];
-        view;
-    });
+//    _iconView = ({
+//        UIImageView *view = [[UIImageView alloc]init];
+//        [self addSubview:view];
+//        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.mas_equalTo(10);
+//            make.bottom.equalTo(self);
+//            make.size.mas_equalTo(CGSizeMake(25, 25));
+//        }];
+////        view.backgroundColor = [UIColor redColor];
+//        view;
+//    });
     
     _titleLabel = ({
         UILabel *view = [[UILabel alloc]init];
@@ -64,8 +64,8 @@
         view.text = @"最热";
         [view sizeToFit];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_iconView.mas_right).offset(10);
-            make.centerY.equalTo(_iconView);
+            make.left.equalTo(self).offset(10);
+            make.bottom.equalTo(self);
         }];
         
         view;
@@ -100,7 +100,7 @@
 
 - (void)pd_fillWithTagName:(NSString *)tagName cateIcon:(NSString*)url showMore:(BOOL)show atIndexPath:(NSIndexPath *)indexPath {
     [self fillWithTagName:tagName atIndexPath:indexPath];
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:url]];
+//    [self.iconView sd_setImageWithURL:[NSURL URLWithString:url]];
     self.arrowBtn.hidden = !show;
 }
 
@@ -111,7 +111,7 @@
 }
 
 + (CGSize)sectionHeaderViewSize {
-    return CGSizeMake(kSCREEN_WIDTH, 50);
+    return CGSizeMake(kSCREEN_WIDTH, 40);
 }
 
 

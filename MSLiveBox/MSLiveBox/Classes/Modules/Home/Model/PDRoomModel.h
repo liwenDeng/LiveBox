@@ -100,6 +100,8 @@
 
 @property (nonatomic, copy) NSString *rtype_usable;
 
+@property (nonatomic, copy) NSString *roomid;
+
 @end
 @interface PDClassification : NSObject
 

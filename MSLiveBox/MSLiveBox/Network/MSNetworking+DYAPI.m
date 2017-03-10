@@ -136,7 +136,8 @@
 #pragma mark - 搜索
 + (NSURLSessionDataTask *)getDouyuRoomListWithKeyword:(NSString *)keyword limit:(NSInteger)limit offset:(NSInteger)offset success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     //http://capi.douyucdn.cn/api/v1/searchNew/%E5%BE%AE%E7%AC%91/1?limit=20&client_sys=ios&offset=0 搜：微笑
-    NSString *urlStr = [NSString stringWithFormat:@"https://capi.douyucdn.cn/api/v1/searchNew/%@/1?limit=%ld&client_sys=ios&offset=%ld",[keyword ms_urlEncode] ,limit,offset];
+    //http://capi.douyucdn.cn/api/v1/mobileSearch/1/1?aid=ios&client_sys=ios&limit=20&offset=0&sk=%E5%BE%AE%E7%AC%91&time=1488178380&auth=c79557e0d9db59f655a6e36cd54862f3
+    NSString *urlStr = [NSString stringWithFormat:@"http://capi.douyucdn.cn/api/v1/mobileSearch/1/1?aid=ios&client_sys=ios&limit=%ld&offset=%ld&sk=%@",limit,offset,[keyword ms_urlEncode]];
     ZCApiAction *action = [[ZCApiAction alloc]initWithURL:urlStr];
     
     return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {

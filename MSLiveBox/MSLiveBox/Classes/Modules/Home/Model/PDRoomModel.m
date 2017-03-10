@@ -15,6 +15,13 @@
     return [[MSRoomCellModel alloc]initWithType:(MSLivetypePanda) iconUrl:self.pictures.img title:self.name nickName:self.userinfo.nickName onlineCount:[NSString stringWithFormat:@"%@",self.person_num] gameName:self.classification.cname roomId:self.roomId ownerId:self.hostid isVertical:0];
 }
 
+- (NSString *)roomId {
+    if (_roomId.length) {
+        return _roomId;
+    }
+    return _roomid;
+}
+
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
     return @{@"roomId" : @"id"};
 }

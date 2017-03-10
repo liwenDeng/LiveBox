@@ -7,6 +7,7 @@
 //
 
 #import "MSNetworking+PandaAPI.h"
+#import "NSString+Code.h"
 
 @implementation MSNetworking (PandaAPI)
 
@@ -84,6 +85,18 @@
 + (NSURLSessionDataTask *)getPandaCommonCates:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     NSInteger time = (NSInteger)[[NSDate date] timeIntervalSince1970];
     NSString *url = [NSString stringWithFormat:@"http://api.m.panda.tv/index.php?method=category.list&type=game&__version=2.0.3.1352&__plat=ios&__channel=appstore&pt_sign=a517c33885c484635d4858d1aeaba38a&pt_time=%ld",(long)time];
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:url];
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
++ (NSURLSessionDataTask *)pd_searchRoomListKeyword:(NSString *)keyword pageNo:(NSInteger)pageNo isLive:(BOOL)isLive success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+//    http://api.m.panda.tv/ajax_search?keyword=%E5%BE%AE%E7%AC%91&pageno=3&pagenum=10&status=2&__version=2.0.3.1352&__plat=ios&__channel=appstore
+    NSInteger live = isLive ? 2 : 3;
+    NSString *url = [NSString stringWithFormat:@"http://api.m.panda.tv/ajax_search?keyword=%@&pageno=%ld&pagenum=20&status=%ld&__version=2.0.3.1352&__plat=ios&__channel=appstore",[keyword ms_urlEncode] ,pageNo,live];
     ZCApiAction *action = [[ZCApiAction alloc]initWithURL:url];
     return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
         success(object);

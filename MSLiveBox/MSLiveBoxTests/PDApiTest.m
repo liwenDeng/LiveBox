@@ -104,4 +104,16 @@
     }];
 }
 
+- (void)testSearchList {
+    [self waitForGroup:^(dispatch_group_t group) {
+        [MSNetworking searchRoomListKeyword:@"微笑" pageNo:1 isLive:YES success:^(NSDictionary *object) {
+            NSArray *cateList = [PDRoomModel mj_objectArrayWithKeyValuesArray:object[@"data"][@"items"]];
+            dispatch_group_leave(group);
+        } failure:^(NSError *error) {
+            
+            dispatch_group_leave(group);
+        }];
+    }];
+}
+
 @end

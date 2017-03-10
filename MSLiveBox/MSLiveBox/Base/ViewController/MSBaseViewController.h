@@ -16,6 +16,12 @@
 
 @end
 
+@protocol MSSearchButtonProtocol <NSObject>
+
+@optional
+- (void)searchButtonClicked;
+
+@end
 
 @interface MSBaseViewController : UIViewController <MSHTTPRequestProtocol>
 

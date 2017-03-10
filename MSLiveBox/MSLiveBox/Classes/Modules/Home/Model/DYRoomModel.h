@@ -21,6 +21,10 @@
 @property (nonatomic, assign) NSInteger online;     //在线人数
 @property (nonatomic, copy) NSString *game_name;    //游戏名称
 
+// 搜索相关
+@property (nonatomic, assign) NSInteger popularity;   //观众数
+@property (nonatomic, assign) NSInteger isLive;   //是否正在直播 1在直播 2不在直播
+
 // 以下为不重要信息
 @property (nonatomic, copy) NSString *subject;
 @property (nonatomic, copy) NSString *child_id;
